@@ -1,122 +1,134 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import './App.css';
+
+const illustrators = [
+  {
+    photo: '/RobiHulmRound.png',
+    name: 'Robi Fazio',
+    bio: 'Old-style graphic designer with a passion for app development. He is the designer and creator of this app.',
+    signature: '/sign_Robi.png',
+  },
+  {
+    photo: '/illuMonica.png',
+    name: 'Monica Milani',
+    bio: "A lover of creative endeavors, Monica draws some of the monsters you'll find in this app.",
+    signature: '/sign_Monica.png',
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="page">
+      <header className="header">
+        <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
+        <nav className="nav">
+          <a href="#home" className="nav-link active">HOME</a>
+          <a href="#privacy" className="nav-link">PRIVACY POLICY</a>
+        </nav>
+        <a href="#contact" className="btn btn-primary header-cta">CONTACT ME</a>
+      </header>
+
+      <section id="home" className="hero">
+        <div className="hero-text">
+          <h1>
+            <span className="accent-red">HULM</span> - Turn daily battles
+            <br />
+            into fun quests
+          </h1>
+          <p className="hero-description">
+            Hulm is a playful timer app that helps kids brush teeth, tidy up, get dressed, and more—
+            without endless negotiations. Every completed timer unlocks a cute monster, so routines
+            feel like a game, not a fight.
+          </p>
+          <p className="hero-highlight">
+            Get HULM on iOS and Android. Start your first monster quest in under 1 minute!
+          </p>
+          <div className="store-badges">
+            <a href="https://play.google.com/store" target="_blank" rel="noreferrer">
+              <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+            </a>
+            <a href="https://apps.apple.com/fr/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+              <img src="/btn_AppStore.png" alt="Download on the App Store" />
+            </a>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
+        <div className="hero-image">
+          <img src="/HULM_screenshot.png" alt="HULM app screenshot on a phone" />
+        </div>
+      </section>
+
+      <section className="quest-section">
+        <div className="quest-splash">
+          <img src="/splash3.png" alt="Hurry Up Little Monster illustration" />
+        </div>
+        <div className="quest-text">
           <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+            With Hulm, every completed timer unlocks a cute monster collectible, transforming
+            mundane moments into playful, rewarding experiences. The app includes ready-made
+            timers for common routines (like brushing teeth or cleaning up), plus the flexibility
+            for parents and kids to create their own custom challenges.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="quest-points">
+          <div className="quest-point">
+            <h3>Turn time into something tangible:</h3>
+            <p>
+              Visual timers make the abstract concept of time concrete for kids, helping them
+              understand what "five more minutes" really means.
+            </p>
+          </div>
+          <div className="quest-point">
+            <h3>Ease transitions:</h3>
+            <p>
+              Timers prepare children for upcoming changes, reducing anxiety and meltdowns
+              when it's time to switch activities.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <section className="illustrators-section">
+        <h2>Our Illustrators</h2>
+        <p className="illustrators-intro">
+          We're starting with a package of stock illustrations. But we're slowly filling up the app with
+          monsters designed by our own illustrators. Do you want to contribute as well? Get in touch with us!
+        </p>
+        <div className="illustrators-grid">
+          {illustrators.map((person) => (
+            <div className="illustrator-card" key={person.name}>
+              <div className="illustrator-photo-wrap">
+                <img src={person.photo} alt={person.name} className="illustrator-photo" />
+              </div>
+              <h3>{person.name}</h3>
+              <p>{person.bio}</p>
+              <img src={person.signature} alt={`${person.name} signature`} className="signature" />
+            </div>
+          ))}
+
+          <div className="illustrator-card">
+            <div className="illustrator-photo-wrap">
+              <img src="/artist0.png" alt="Become an illustrator" className="illustrator-photo" />
+            </div>
+            <h3>You?</h3>
+            <p>
+              Would you like to send us your monsters too? We'll be happy to get your drawings.
+              Just get in touch with us!
+            </p>
+            <a href="#contact" className="btn btn-primary">CONTACT</a>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" className="footer">
+        <img src="/HulmLogo.svg" alt="HULM logo" className="logo logo-footer" />
+        <nav className="footer-nav">
+          <a href="#home">HOME</a>
+          <a href="#privacy">PRIVACY POLICY</a>
+        </nav>
+        <a href="#contact" className="btn btn-primary">CONTACT ME</a>
+        <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
