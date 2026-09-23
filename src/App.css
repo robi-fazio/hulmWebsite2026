@@ -9,8 +9,8 @@ html, body {
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  color: #2b2b2b;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: #423c34;
 }
 
 #root {
@@ -34,7 +34,7 @@ body {
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.03em;
   border: none;
@@ -88,14 +88,14 @@ body {
 .nav {
   display: flex;
   gap: 2.5rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.03em;
 }
 
 .nav-link {
-  color: #3a3a3a;
+  color: #423c34;
   text-decoration: none;
 }
 
@@ -124,6 +124,7 @@ body {
 }
 
 .hero-text h1 {
+  font-family: 'Roboto Slab', 'Georgia', serif;
   font-size: 2.75rem;
   line-height: 1.2;
   color: #1d3fd6;
@@ -131,15 +132,15 @@ body {
 }
 
 .hero-description {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #3a3a3a;
+  color: #423c34;
   margin-bottom: 1.25rem;
 }
 
 .hero-highlight {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   color: #1d3fd6;
   margin-bottom: 2rem;
@@ -186,10 +187,10 @@ body {
 }
 
 .quest-text {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #3a3a3a;
+  color: #423c34;
 }
 
 .quest-points {
@@ -199,17 +200,17 @@ body {
 }
 
 .quest-point h3 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto Slab', 'Georgia', serif;
   color: #1d3fd6;
   font-size: 1rem;
   margin: 0 0 0.5rem;
 }
 
 .quest-point p {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #3a3a3a;
+  color: #423c34;
   margin: 0;
 }
 
@@ -226,14 +227,16 @@ body {
 }
 
 .illustrators-section h2 {
+  font-family: 'Roboto Slab', 'Georgia', serif;
   font-size: 2.25rem;
   margin-bottom: 1rem;
+  color: #423c34;
 }
 
 .illustrators-intro {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   max-width: 800px;
-  color: #3a3a3a;
+  color: #423c34;
   line-height: 1.6;
   margin-bottom: 2.5rem;
 }
@@ -276,15 +279,17 @@ body {
 }
 
 .illustrator-card h3 {
+  font-family: 'Roboto Slab', 'Georgia', serif;
   margin: 0 0 0.75rem;
   font-size: 1.15rem;
+  color: #423c34;
 }
 
 .illustrator-card p {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #3a3a3a;
+  color: #423c34;
   margin-bottom: 1rem;
 }
 
@@ -311,7 +316,7 @@ body {
 .footer-nav {
   display: flex;
   gap: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.85rem;
 }
 
@@ -324,7 +329,7 @@ body {
   width: 100%;
   text-align: center;
   color: #999;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.8rem;
   margin: 0.5rem 0 0;
 }
