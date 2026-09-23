@@ -1,4 +1,6 @@
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const illustrators = [
   {
@@ -15,17 +17,17 @@ const illustrators = [
   },
 ];
 
-function App() {
+function HomePage() {
   return (
     <div className="page">
       <header className="header">
         <div className="header-inner header-row">
           <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
           <nav className="nav">
-            <a href="#home" className="nav-link active">HOME</a>
-            <a href="#privacy" className="nav-link">PRIVACY POLICY</a>
+            <Link to="/" className="nav-link active">HOME</Link>
+            <Link to="/privacy-policy" className="nav-link">PRIVACY POLICY</Link>
           </nav>
-          <a href="#contact" className="btn btn-primary header-cta">CONTACT ME</a>
+          <a href="mailto:info@robifazio.com" className="btn btn-primary header-cta">CONTACT ME</a>
         </div>
       </header>
 
@@ -120,7 +122,7 @@ function App() {
                 Would you like to send us your monsters too? We'll be happy to get your drawings.
                 Just get in touch with us!
               </p>
-              <a href="#contact" className="btn btn-primary">CONTACT</a>
+              <a href="mailto:info@robifazio.com" className="btn btn-primary">CONTACT</a>
             </div>
           </div>
         </div>
@@ -130,14 +132,23 @@ function App() {
         <div className="footer-inner">
           <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
           <nav className="footer-nav">
-            <a href="#home">HOME</a>
-            <a href="#privacy">PRIVACY POLICY</a>
+            <Link to="/">HOME</Link>
+            <Link to="/privacy-policy">PRIVACY POLICY</Link>
           </nav>
-          <a href="#contact" className="btn btn-primary">CONTACT ME</a>
+          <a href="mailto:info@robifazio.com" className="btn btn-primary">CONTACT ME</a>
           <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    </Routes>
   );
 }
 
