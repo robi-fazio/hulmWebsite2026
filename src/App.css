@@ -60,7 +60,7 @@ body {
 
 .header {
   padding: 1.5rem 4rem;
-  background-color: #d9c6a3;
+  background-color: #D7C6AE;
   display: flex;
   justify-content: center;
 }
@@ -82,7 +82,7 @@ body {
 }
 
 .logo {
-  height: 38px;
+  height: 44px;
 }
 
 .nav {
@@ -105,7 +105,7 @@ body {
 
 .hero {
   padding: 5rem 4rem;
-  background-color: #d9c6a3;
+  background-color: #D7C6AE;
   display: flex;
   justify-content: center;
 }
@@ -171,7 +171,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 4.5rem 4rem;
-  background-color: #e8e0d3;
+  background-color: #E1DAD0;
 }
 
 .quest-inner {
@@ -215,7 +215,7 @@ body {
 
 .illustrators-section {
   padding: 4.5rem 4rem;
-  background-color: #d9c6a3;
+  background-color: #D7C6AE;
   display: flex;
   justify-content: center;
 }
@@ -256,12 +256,12 @@ body {
 }
 
 .illustrator-photo-wrap {
-  width: 156px;
-  height: 156px;
+  width: 187px;
+  height: 187px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.25rem;
-  background-color: #d9c6a3;
+  background-color: #D7C6AE;
 }
 
 .illustrator-photo {
@@ -292,7 +292,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 2rem 4rem;
-  background-color: #3a3a3a;
+  background-color: #3D3D3A;
 }
 
 .footer-inner {
@@ -301,10 +301,6 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-}
-
-.logo-footer {
-  filter: brightness(0) invert(1);
 }
 
 .footer-nav {

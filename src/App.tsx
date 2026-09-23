@@ -128,7 +128,7 @@ function App() {
 
       <footer id="contact" className="footer">
         <div className="footer-inner">
-          <img src="/HulmLogo.svg" alt="HULM logo" className="logo logo-footer" />
+          <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
           <nav className="footer-nav">
             <a href="#home">HOME</a>
             <a href="#privacy">PRIVACY POLICY</a>
