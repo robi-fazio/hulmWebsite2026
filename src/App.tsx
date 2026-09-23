@@ -8,12 +8,14 @@ const illustrators = [
     name: 'Robi Fazio',
     bio: 'Old-style graphic designer with a passion for app development. He is the designer and creator of this app.',
     signature: '/sign_Robi.png',
+    zoom: false,
   },
   {
     photo: '/illuMonica.png',
     name: 'Monica Milani',
     bio: "A lover of creative endeavors, Monica draws some of the monsters you'll find in this app.",
     signature: '/sign_Monica.png',
+    zoom: true,
   },
 ];
 
@@ -105,7 +107,11 @@ function HomePage() {
             {illustrators.map((person) => (
               <div className="illustrator-card" key={person.name}>
                 <div className="illustrator-photo-wrap">
-                  <img src={person.photo} alt={person.name} className="illustrator-photo" />
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    className={`illustrator-photo${person.zoom ? ' illustrator-photo--zoom' : ''}`}
+                  />
                 </div>
                 <h3>{person.name}</h3>
                 <p>{person.bio}</p>
@@ -115,7 +121,11 @@ function HomePage() {
 
             <div className="illustrator-card">
               <div className="illustrator-photo-wrap">
-                <img src="/artist0.png" alt="Become an illustrator" className="illustrator-photo" />
+                <img
+                  src="/artist0.png"
+                  alt="Become an illustrator"
+                  className="illustrator-photo illustrator-photo--zoom"
+                />
               </div>
               <h3>You?</h3>
               <p>
