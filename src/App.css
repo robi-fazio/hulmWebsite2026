@@ -59,15 +59,30 @@ body {
 }
 
 .header {
+  padding: 1.5rem 4rem;
+  background-color: #d9c6a3;
+  display: flex;
+  justify-content: center;
+}
+
+.header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 4rem;
-  background-color: #d9c6a3;
+}
+
+.header-inner,
+.hero-inner,
+.quest-inner,
+.illustrators-inner,
+.footer-inner {
+  width: 100%;
+  max-width: 1224px;
+  margin: 0 auto;
 }
 
 .logo {
-  height: 32px;
+  height: 38px;
 }
 
 .nav {
@@ -89,12 +104,17 @@ body {
 }
 
 .hero {
+  padding: 5rem 4rem;
+  background-color: #d9c6a3;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 5rem 4rem;
-  background-color: #d9c6a3;
   flex-wrap: wrap;
 }
 
@@ -132,7 +152,7 @@ body {
 }
 
 .store-badges img {
-  height: 48px;
+  height: 58px;
 }
 
 .hero-image {
@@ -148,12 +168,17 @@ body {
 }
 
 .quest-section {
-  display: grid;
-  grid-template-columns: 320px 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  display: flex;
+  justify-content: center;
   padding: 4.5rem 4rem;
   background-color: #e8e0d3;
+}
+
+.quest-inner {
+  display: grid;
+  grid-template-columns: 256px 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
 .quest-splash img {
@@ -191,6 +216,13 @@ body {
 .illustrators-section {
   padding: 4.5rem 4rem;
   background-color: #d9c6a3;
+  display: flex;
+  justify-content: center;
+}
+
+.illustrators-inner {
+  display: flex;
+  flex-direction: column;
 }
 
 .illustrators-section h2 {
@@ -224,8 +256,8 @@ body {
 }
 
 .illustrator-photo-wrap {
-  width: 130px;
-  height: 130px;
+  width: 156px;
+  height: 156px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.25rem;
@@ -258,12 +290,17 @@ body {
 
 .footer {
   display: flex;
+  justify-content: center;
+  padding: 2rem 4rem;
+  background-color: #3a3a3a;
+}
+
+.footer-inner {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding: 2rem 4rem;
-  background-color: #3a3a3a;
 }
 
 .logo-footer {
@@ -291,24 +328,13 @@ body {
   margin: 0.5rem 0 0;
 }
 
-@media (min-width: 1600px) {
-  .header,
-  .hero,
-  .quest-section,
-  .illustrators-section,
-  .footer {
-    padding-left: max(4rem, calc((100% - 1440px) / 2));
-    padding-right: max(4rem, calc((100% - 1440px) / 2));
-  }
-}
-
 @media (max-width: 900px) {
   .header, .hero, .quest-section, .illustrators-section, .footer {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  .quest-section {
+  .quest-inner {
     grid-template-columns: 1fr;
   }
 
