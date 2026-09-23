@@ -2,14 +2,26 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
   font-family: 'Georgia', 'Times New Roman', serif;
   color: #2b2b2b;
 }
 
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 .page {
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .accent-red {
@@ -36,6 +48,14 @@ body {
 
 .btn-primary:hover {
   background-color: #6d28d9;
+}
+
+.header,
+.hero,
+.quest-section,
+.illustrators-section,
+.footer {
+  width: 100%;
 }
 
 .header {
@@ -80,6 +100,7 @@ body {
 
 .hero-text {
   max-width: 560px;
+  flex: 1 1 480px;
 }
 
 .hero-text h1 {
@@ -112,6 +133,12 @@ body {
 
 .store-badges img {
   height: 48px;
+}
+
+.hero-image {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-image img {
@@ -183,6 +210,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
 .illustrator-card {
@@ -261,6 +289,17 @@ body {
   font-family: 'Arial', sans-serif;
   font-size: 0.8rem;
   margin: 0.5rem 0 0;
+}
+
+@media (min-width: 1600px) {
+  .header,
+  .hero,
+  .quest-section,
+  .illustrators-section,
+  .footer {
+    padding-left: max(4rem, calc((100% - 1440px) / 2));
+    padding-right: max(4rem, calc((100% - 1440px) / 2));
+  }
 }
 
 @media (max-width: 900px) {
