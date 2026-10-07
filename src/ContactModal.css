@@ -59,7 +59,7 @@
 
 .form-field input,
 .form-field textarea {
-  background-color: #ffffff;
+  background-color: #ECE7DB;
   border: none;
   border-radius: 10px;
   padding: 0.65rem 0.9rem;
@@ -71,7 +71,7 @@
 
 .form-field input:focus,
 .form-field textarea:focus {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #ECE7DB;
   outline-offset: 2px;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .btn-send {
-  background-color: #ffffff;
+  background-color: #ECE7DB;
   color: #974590;
 }
 
