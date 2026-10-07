@@ -42,12 +42,13 @@ body {
 }
 
 .btn-primary {
-  background-color: #7c3aed;
+  background-color: #974590;
   color: #fff;
+  transition: filter 0.4s ease, background-color 0.4s ease;
 }
 
 .btn-primary:hover {
-  background-color: #6d28d9;
+  filter: grayscale(55%) brightness(1.05);
 }
 
 .header,

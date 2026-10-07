@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './PrivacyPolicy.css';
+import ContactModal from './ContactModal';
 
 function PrivacyPolicy() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <div className="privacy-page">
       <header className="header">
@@ -13,7 +17,9 @@ function PrivacyPolicy() {
             <Link to="/" className="nav-link">HOME</Link>
             <Link to="/privacy-policy" className="nav-link active">PRIVACY POLICY</Link>
           </nav>
-          <a href="mailto:info@robifazio.com" className="btn btn-primary header-cta">CONTACT ME</a>
+          <button className="btn btn-primary header-cta" onClick={() => setIsContactOpen(true)}>
+            CONTACT ME
+          </button>
         </div>
       </header>
 
@@ -121,10 +127,14 @@ function PrivacyPolicy() {
             <Link to="/">HOME</Link>
             <Link to="/privacy-policy">PRIVACY POLICY</Link>
           </nav>
-          <a href="mailto:info@robifazio.com" className="btn btn-primary">CONTACT ME</a>
+          <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
+            CONTACT ME
+          </button>
           <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
         </div>
       </footer>
+
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </div>
   );
 }

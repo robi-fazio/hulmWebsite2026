@@ -1,0 +1,120 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background-color: #974590;
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0 0 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.form-field input,
+.form-field textarea {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 0.95rem;
+  color: #423c34;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-cancel,
+.btn-send {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-cancel:hover {
+  filter: grayscale(60%) brightness(1.1);
+}
+
+.btn-send {
+  background-color: #ffffff;
+  color: #974590;
+}
+
+.btn-send:hover {
+  filter: grayscale(40%);
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 2rem 1.5rem;
+  }
+}
