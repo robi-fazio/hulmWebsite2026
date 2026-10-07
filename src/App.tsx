@@ -50,10 +50,10 @@ function HomePage() {
               Get HULM on iOS and Android. Start your first monster quest in under 1 minute!
             </p>
             <div className="store-badges">
-              <a href="https://play.google.com/store" target="_blank" rel="noreferrer">
+              <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
                 <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
               </a>
-              <a href="https://apps.apple.com/fr/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+              <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
                 <img src="/btn_AppStore.png" alt="Download on the App Store" />
               </a>
             </div>
