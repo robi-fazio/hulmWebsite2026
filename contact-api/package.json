@@ -1,0 +1,14 @@
+{
+  "name": "hulm-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "nodemailer": "^6.9.13"
+  }
+}
