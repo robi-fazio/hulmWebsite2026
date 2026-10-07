@@ -69,10 +69,34 @@
   resize: vertical;
 }
 
+.form-field input:disabled,
+.form-field textarea:disabled {
+  opacity: 0.7;
+}
+
 .form-field input:focus,
 .form-field textarea:focus {
   outline: 2px solid #ECE7DB;
   outline-offset: 2px;
+}
+
+.form-status {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+.form-status--success {
+  background-color: #ECE7DB;
+  color: #423c34;
+}
+
+.form-status--error {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  margin: 0;
 }
 
 .form-actions {
@@ -111,6 +135,12 @@
 
 .btn-send:hover {
   filter: grayscale(40%);
+}
+
+.btn-cancel:disabled,
+.btn-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 @media (max-width: 480px) {
