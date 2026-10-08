@@ -30,7 +30,7 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
     setStatus('sending');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://hulm.robifazio.com/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
