@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
+import Header from './Header';
 
 const illustrators = [
   {
@@ -26,18 +27,7 @@ function HomePage() {
 
   return (
     <div className="page">
-      <header className="header">
-        <div className="header-inner header-row">
-          <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
-          <nav className="nav">
-            <Link to="/" className="nav-link active">HOME</Link>
-            <Link to="/privacy-policy" className="nav-link">PRIVACY POLICY</Link>
-          </nav>
-          <button className="btn btn-primary header-cta" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
-          </button>
-        </div>
-      </header>
+      <Header activePage="home" onContactClick={() => setIsContactOpen(true)} />
 
       <section id="home" className="hero">
         <div className="hero-inner hero-row">
@@ -53,7 +43,7 @@ function HomePage() {
               feel like a game, not a fight.
             </p>
             <p className="hero-highlight">
-              Get HULM on iOS and Android. Start your first monster quest in under one minute!
+              Get HULM on iOS and Android. Start your first monster quest in under 1 minute!
             </p>
             <div className="store-badges">
               <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
