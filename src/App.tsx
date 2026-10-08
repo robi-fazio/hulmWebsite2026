@@ -53,7 +53,7 @@ function HomePage() {
               feel like a game, not a fight.
             </p>
             <p className="hero-highlight">
-              Get HULM on iOS and Android. Start your first monster quest in under 1 minute!
+              Get HULM on iOS and Android. Start your first monster quest in under one minute!
             </p>
             <div className="store-badges">
               <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
