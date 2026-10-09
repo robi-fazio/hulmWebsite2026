@@ -5,12 +5,15 @@
 html, body {
   margin: 0;
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
 body {
   font-family: 'Roboto', 'Arial', sans-serif;
   color: #423c34;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 #root {
@@ -57,6 +60,7 @@ body {
 .illustrators-section,
 .footer {
   width: 100%;
+  max-width: 100%;
 }
 
 .header {
@@ -88,7 +92,7 @@ body {
 
 .nav {
   display: flex;
-  gap: 2.5rem;
+  align-items: center;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -98,6 +102,11 @@ body {
 .nav-link {
   color: #423c34;
   text-decoration: none;
+  margin-right: 2.5rem;
+}
+
+.nav-link:last-child {
+  margin-right: 0;
 }
 
 .nav-link.active {
@@ -115,13 +124,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
   flex-wrap: wrap;
 }
 
 .hero-text {
   max-width: 560px;
   flex: 1 1 480px;
+  margin-right: 3rem;
 }
 
 .hero-text h1 {
@@ -151,18 +160,28 @@ body {
 
 .store-badges {
   display: flex;
-  gap: 1rem;
   align-items: center;
+}
+
+.store-badges a {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.store-badges a:last-child {
+  margin-right: 0;
 }
 
 .store-badges img {
   height: 58px;
+  display: block;
 }
 
 .hero-image {
   flex: 1 1 240px;
   display: flex;
   justify-content: flex-end;
+  margin-top: 2rem;
 }
 
 .hero-image img {
@@ -179,10 +198,14 @@ body {
 }
 
 .quest-inner {
-  display: grid;
-  grid-template-columns: 256px 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.quest-splash {
+  flex: 0 0 256px;
+  margin-right: 3rem;
 }
 
 .quest-splash img {
@@ -190,6 +213,8 @@ body {
 }
 
 .quest-text {
+  flex: 1 1 280px;
+  margin-right: 3rem;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -197,9 +222,17 @@ body {
 }
 
 .quest-points {
+  flex: 1 1 280px;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+}
+
+.quest-point {
+  margin-bottom: 1.75rem;
+}
+
+.quest-point:last-child {
+  margin-bottom: 0;
 }
 
 .quest-point h3 {
@@ -245,13 +278,15 @@ body {
 }
 
 .illustrators-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  margin: -1rem;
 }
 
 .illustrator-card {
+  flex: 1 1 280px;
+  margin: 1rem;
   background-color: #ede7db;
   border-radius: 24px;
   padding: 2.5rem 2rem;
@@ -313,12 +348,10 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
 .footer-nav {
   display: flex;
-  gap: 2rem;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 0.85rem;
 }
@@ -326,6 +359,11 @@ body {
 .footer-nav a {
   color: #ddd;
   text-decoration: none;
+  margin-right: 2rem;
+}
+
+.footer-nav a:last-child {
+  margin-right: 0;
 }
 
 .footer-copy {
@@ -345,6 +383,7 @@ body {
 
   .hero-text {
     max-width: 100%;
+    margin-right: 0;
   }
 
   .hero-text h1 {
@@ -376,7 +415,15 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 0.75rem;
+  }
+
+  .store-badges a {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .store-badges a:last-child {
+    margin-bottom: 0;
   }
 
   .store-badges img {
@@ -384,17 +431,43 @@ body {
   }
 
   .quest-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .quest-splash,
+  .quest-text {
+    margin-right: 0;
+    margin-bottom: 1.75rem;
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .quest-points {
+    width: 100%;
   }
 
   .illustrators-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .illustrator-card {
+    margin: 0 0 1.5rem;
+    width: 100%;
+  }
+
+  .illustrator-card:last-child {
+    margin-bottom: 0;
   }
 
   .hero-row {
     flex-direction: column;
     text-align: center;
     align-items: center;
+  }
+
+  .hero-text {
+    margin-right: 0;
   }
 
   .hero-image {
