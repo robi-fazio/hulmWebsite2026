@@ -1,8 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './HeroVideo.css';
 
 export default function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const video = videoRef.current;
+
+      if (video) {
+        video.play().catch(() => {
+          // Browsers may block playback until the visitor interacts with the page.
+        });
+      }
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="hero-media">
@@ -10,14 +25,13 @@ export default function HeroVideo() {
         <img className="hero-video" src="/HULM_screenshot.png" alt="HULM timer app on a smartphone" />
       ) : (
         <video
+          ref={videoRef}
           className="hero-video"
-          autoPlay
           muted
           loop
           playsInline
           controls
-          preload="metadata"
-          poster="/HULM_screenshot.png"
+          preload="auto"
           aria-label="HULM smartphone app demonstration"
           onError={() => setFailed(true)}
         >
