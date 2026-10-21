@@ -1,27 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css';
 import './PrivacyPolicy.css';
 import ContactModal from './ContactModal';
+import Header from './Header';
 
 function PrivacyPolicy() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="privacy-page">
-      <header className="header">
-        <div className="header-inner header-row">
-          <Link to="/">
-            <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
-          </Link>
-          <nav className="nav">
-            <Link to="/" className="nav-link">HOME</Link>
-            <Link to="/privacy-policy" className="nav-link active">PRIVACY POLICY</Link>
-          </nav>
-          <button className="btn btn-primary header-cta" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
-          </button>
-        </div>
-      </header>
+      <Header activePage="privacy" onContactClick={() => setIsContactOpen(true)} />
 
       <main className="privacy-content">
         <div className="privacy-inner">
