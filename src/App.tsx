@@ -4,6 +4,7 @@ import './App.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
 import Header from './Header';
+import HeroVideo from './HeroVideo';
 
 const illustrators = [
   {
@@ -54,9 +55,7 @@ function HomePage() {
               </a>
             </div>
           </div>
-          <div className="hero-image">
-            <img src="/HULM_screenshot.png" alt="HULM app screenshot on a phone" />
-          </div>
+          <HeroVideo />
         </div>
       </section>
 
