@@ -30,7 +30,6 @@ export default function HeroVideo() {
           muted
           loop
           playsInline
-          controls
           preload="auto"
           aria-label="HULM smartphone app demonstration"
           onError={() => setFailed(true)}
