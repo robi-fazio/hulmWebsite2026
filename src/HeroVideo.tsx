@@ -20,9 +20,9 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <div className="hero-media">
+    <div className="hero-media" aria-hidden="true">
       {failed ? (
-        <img className="hero-video" src="/HULM_screenshot.png" alt="HULM timer app on a smartphone" />
+        <img className="hero-video" src="/HULM_screenshot.png" alt="" />
       ) : (
         <video
           ref={videoRef}
@@ -31,11 +31,9 @@ export default function HeroVideo() {
           loop
           playsInline
           preload="auto"
-          aria-label="HULM smartphone app demonstration"
           onError={() => setFailed(true)}
         >
-          <source src="/videos/hulm-hero.mp4" type="video/mp4" onError={() => setFailed(true)} />
-          Your browser does not support this video.
+          <source src="/videos/hulm-hero4k.mp4" type="video/mp4" onError={() => setFailed(true)} />
         </video>
       )}
     </div>
