@@ -1,14 +1,12 @@
 .hero {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
   background-color: #DECDB8;
+  --hero-video-width: 655px;
+  --hero-video-zoom: 1;
 }
 
 .hero .hero-row {
   flex-wrap: nowrap;
   align-items: center;
-  min-height: 655px;
 }
 
 .hero .hero-text {
@@ -18,29 +16,62 @@
 }
 
 .hero .hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  flex: 0 1 var(--hero-video-width);
+  min-width: 0;
+  width: var(--hero-video-width);
+  max-width: 100%;
+  margin: 0 0 0 auto;
+  overflow: hidden;
 }
 
 .hero .hero-video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: scale(var(--hero-video-zoom));
+  transform-origin: center center;
 }
 
+/* Very large desktop */
+@media (min-width: 1600px) {
+  .hero {
+    --hero-video-width: 680px;
+    --hero-video-zoom: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1366px) and (max-width: 1599px) {
+  .hero {
+    --hero-video-width: 655px;
+    --hero-video-zoom: 1;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1195px) and (max-width: 1365px) {
+  .hero {
+    --hero-video-width: 580px;
+    --hero-video-zoom: 1.05;
+  }
+}
+
+/* iPad landscape */
+@media (min-width: 901px) and (max-width: 1194px) {
+  .hero {
+    --hero-video-width: 440px;
+    --hero-video-zoom: 1.15;
+  }
+}
+
+/* Stacked layout: iPad portrait and phone */
 @media (max-width: 900px) {
   .hero .hero-row {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: 0;
-    padding-bottom: calc(min(612px, 100vw - 3rem) + 2rem);
   }
 
   .hero .hero-text {
@@ -53,10 +84,25 @@
   .hero .hero-text h1 br {
     display: none;
   }
+
+  .hero .hero-media {
+    flex: 0 0 auto;
+    margin: 2rem auto 0;
+  }
 }
 
-@media (max-width: 480px) {
-  .hero .hero-row {
-    padding-bottom: calc(min(524px, 100vw - 3rem) + 2rem);
+/* iPad portrait */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero {
+    --hero-video-width: 520px;
+    --hero-video-zoom: 1.1;
+  }
+}
+
+/* Phone (to be redesigned with a dedicated video) */
+@media (max-width: 600px) {
+  .hero {
+    --hero-video-width: 524px;
+    --hero-video-zoom: 1;
   }
 }
