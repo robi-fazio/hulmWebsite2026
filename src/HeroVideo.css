@@ -3,6 +3,10 @@
   overflow: hidden;
   isolation: isolate;
   background-color: #DECDB8;
+  --hero-video-zoom: 1;
+  --hero-video-origin-x: 50%;
+  --hero-video-origin-y: 50%;
+  --hero-video-pos-x: 50%;
 }
 
 .hero .hero-row {
@@ -31,7 +35,59 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: var(--hero-video-pos-x) 50%;
+  transform: scale(var(--hero-video-zoom));
+  transform-origin: var(--hero-video-origin-x) var(--hero-video-origin-y);
+}
+
+/* Very large desktop (1600px and up) */
+@media (min-width: 1600px) {
+  .hero {
+    --hero-video-zoom: 1.15;
+    --hero-video-origin-x: 25%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+  }
+}
+
+/* Desktop (1366px to 1599px) */
+@media (min-width: 1366px) and (max-width: 1599px) {
+  .hero {
+    --hero-video-zoom: 1.15;
+    --hero-video-origin-x: 25%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+  }
+}
+
+/* Laptop (1195px to 1365px) */
+@media (min-width: 1195px) and (max-width: 1365px) {
+  .hero {
+    --hero-video-zoom: 1.2;
+    --hero-video-origin-x: 20%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+  }
+}
+
+/* iPad landscape (901px to 1194px) */
+@media (min-width: 901px) and (max-width: 1194px) {
+  .hero {
+    --hero-video-zoom: 1.15;
+    --hero-video-origin-x: 15%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+  }
+}
+
+/* iPad portrait (601px to 900px) - estimated, needs calibration */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero {
+    --hero-video-zoom: 1;
+    --hero-video-origin-x: 50%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 71%;
+  }
 }
 
 @media (max-width: 900px) {
