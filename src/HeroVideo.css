@@ -7,6 +7,7 @@
   --hero-video-origin-x: 50%;
   --hero-video-origin-y: 50%;
   --hero-video-pos-x: 50%;
+  --hero-video-shift-x: 0%;
 }
 
 .hero .hero-row {
@@ -36,7 +37,7 @@
   height: 100%;
   object-fit: cover;
   object-position: var(--hero-video-pos-x) 50%;
-  transform: scale(var(--hero-video-zoom));
+  transform: translateX(var(--hero-video-shift-x)) scale(var(--hero-video-zoom));
   transform-origin: var(--hero-video-origin-x) var(--hero-video-origin-y);
 }
 
@@ -83,10 +84,15 @@
 /* iPad landscape (901px to 1194px) */
 @media (min-width: 901px) and (max-width: 1194px) {
   .hero {
-    --hero-video-zoom: 1.15;
+    --hero-video-zoom: 1.32;
     --hero-video-origin-x: 15%;
     --hero-video-origin-y: 50%;
     --hero-video-pos-x: 50%;
+    --hero-video-shift-x: -15%;
+  }
+
+  .hero .hero-text {
+    padding-left: 3rem;
   }
 }
 
