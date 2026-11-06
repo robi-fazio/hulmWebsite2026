@@ -50,20 +50,30 @@
   }
 }
 
-/* Desktop (1366px to 1599px) */
-@media (min-width: 1366px) and (max-width: 1599px) {
+/* Large laptop / 1440 (1440px to 1599px) */
+@media (min-width: 1440px) and (max-width: 1599px) {
   .hero {
-    --hero-video-zoom: 1.15;
+    --hero-video-zoom: 1.265;
     --hero-video-origin-x: 25%;
     --hero-video-origin-y: 50%;
     --hero-video-pos-x: 50%;
   }
 }
 
-/* Laptop (1195px to 1365px) */
+/* Desktop 1366 (1366px to 1439px) */
+@media (min-width: 1366px) and (max-width: 1439px) {
+  .hero {
+    --hero-video-zoom: 1.32;
+    --hero-video-origin-x: 25%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+  }
+}
+
+/* Laptop 1280 (1195px to 1365px) */
 @media (min-width: 1195px) and (max-width: 1365px) {
   .hero {
-    --hero-video-zoom: 1.2;
+    --hero-video-zoom: 1.38;
     --hero-video-origin-x: 20%;
     --hero-video-origin-y: 50%;
     --hero-video-pos-x: 50%;
