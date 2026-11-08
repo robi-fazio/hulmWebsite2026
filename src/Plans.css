@@ -16,15 +16,22 @@
   font-family: 'Roboto Slab', 'Georgia', serif;
   font-size: 2.25rem;
   color: #423c34;
-  margin: 0 0 1rem;
+  margin: 0 0 2rem;
 }
 
 .plans-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1.2fr);
   gap: 2rem;
   align-items: stretch;
-  max-width: 920px;
+}
+
+.plans-intro p {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #423c34;
+  margin: 0;
 }
 
 .plan-card {
@@ -127,6 +134,17 @@
   font-weight: 700;
 }
 
+@media (max-width: 1100px) {
+  .plans-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .plans-intro {
+    grid-column: 1 / -1;
+    max-width: 800px;
+  }
+}
+
 @media (max-width: 900px) {
   .plans-section {
     padding-left: 1.5rem;
@@ -136,6 +154,10 @@
   .plans-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .plans-intro p {
+    font-size: 1.08rem;
   }
 
   .plan-card {

@@ -19,12 +19,15 @@ function Plans() {
     <section id="plans" className="plans-section">
       <div className="plans-inner">
         <h2>Free and Premium</h2>
-        <p className="section-intro">
-          Start for free with everything your child needs to begin collecting monsters. Upgrade to
-          Premium when you want an ad-free app, saved timers, task lists and a profile for each
-          child.
-        </p>
         <div className="plans-grid">
+          <div className="plans-intro">
+            <p>
+              Start for free with everything your child needs to begin collecting monsters. Upgrade
+              to Premium when you want an ad-free app, saved timers, task lists and a profile for
+              each child.
+            </p>
+          </div>
+
           <div className="plan-card">
             <h3 className="plan-name">Free</h3>
             <p className="plan-tagline">Everything you need to get started.</p>
