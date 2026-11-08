@@ -15,96 +15,128 @@ function PrivacyPolicy() {
       <main className="privacy-content">
         <div className="privacy-inner">
           <h1>Privacy Policy</h1>
-          <p className="privacy-subtitle">Privacy Policy for HULM - A Timer for Kids</p>
-          <p className="privacy-updated">Last updated: February 12, 2025</p>
+          <p className="privacy-subtitle">Privacy Policy for HULM – A Timer for Kids</p>
+          <p className="privacy-updated">Last updated: November 8, 2026</p>
 
           <p>
-            This Privacy Policy describes how HULM - A Timer for Kids ("we", "us", or "our")
-            collects, uses, and shares information when you use our mobile application ("App").
+            This policy explains how HULM – A Timer for Kids (“HULM”, “we”, “us”) handles
+            information when you use our mobile app. HULM is published by Robi Fazio, based in
+            France, and is intended to be used by children together with a parent or guardian.
           </p>
 
-          <h2>Information We Collect</h2>
-
-          <h3>Automatically Collected Information</h3>
-          <p>When you use our App, we automatically collect certain information, including:</p>
+          <h2>1. Summary</h2>
           <ul>
-            <li>Device information (such as device model, operating system version, unique device identifiers)</li>
-            <li>Log information (such as app crashes, system activity, and hardware settings)</li>
-            <li>Usage data (such as the features you use, time spent on the App, and interaction with ads)</li>
+            <li>There is no account, sign-up, or sign-in.</li>
+            <li>We do not ask for names, email addresses, photos, or contact details.</li>
+            <li>
+              Your timers, task lists, monsters, game progress, and child profiles are stored on
+              your device.
+            </li>
+            <li>The free version shows ads. Premium removes them.</li>
+            <li>We do not sell personal information.</li>
           </ul>
 
-          <h3>User-Generated Content</h3>
+          <h2>2. Information stored on your device</h2>
           <p>
-            Our App allows users to collect and store images of little monsters as rewards. These
-            images are stored locally on your device.
+            HULM stores the following locally on your device: monsters collected, timers and task
+            lists (including the custom ones you save with Premium), memory game progress, and
+            child profiles. We do not have access to this data. We recommend using a nickname or
+            first name for profiles, never a full name. Deleting the app removes this data.
           </p>
 
-          <h2>How We Use Your Information</h2>
-          <p>We use the collected information to:</p>
-          <ul>
-            <li>Provide and maintain the App's functionality</li>
-            <li>Improve and optimize the App's performance</li>
-            <li>Deliver relevant advertisements</li>
-            <li>Analyze usage patterns and trends</li>
-          </ul>
-
-          <h2>Sharing of Information</h2>
+          <h2>3. Information collected automatically</h2>
           <p>
-            We may share non-personal, aggregated, or device-level information with third parties
-            for industry analysis and advertising purposes. We do not sell personal information to
-            third parties.
-          </p>
-
-          <h2>Advertising</h2>
-          <p>
-            Our App includes third-party advertising to support our services. These advertisers may
-            use technologies to collect data to deliver personalized advertising. This information
-            is not associated with any personal data.
-          </p>
-
-          <h2>Data Storage and Security</h2>
-          <p>
-            The images of little monsters collected as rewards are stored locally on your device.
-            We do not have access to this data. We implement appropriate technical and
-            organizational measures to protect the information we collect and store.
-          </p>
-
-          <h2>Children's Privacy</h2>
-          <p>
-            Our App is designed for use by children, but we do not knowingly collect personal
-            information from children under 13. The App does not require sign-up or sign-in,
-            minimizing data collection.
-          </p>
-
-          <h2>Your Rights Under GDPR</h2>
-          <p>
-            As we are based in France, we comply with the General Data Protection Regulation
-            (GDPR). Under GDPR, you have the right to:
+            When you use the app, certain technical information may be collected by our service
+            providers:
           </p>
           <ul>
-            <li>Access the data we hold about you</li>
-            <li>Rectify inaccurate personal data</li>
-            <li>Erase your personal data</li>
-            <li>Object to or restrict processing of your personal data</li>
-            <li>Data portability</li>
+            <li>
+              Device information (such as device model, operating system version, and device
+              identifiers)
+            </li>
+            <li>Log information (such as app crashes and performance)</li>
+            <li>Usage data (such as the features used and interaction with ads)</li>
           </ul>
-          <p>To exercise these rights, please contact us using the information provided below.</p>
-
-          <h2>Changes to This Privacy Policy</h2>
           <p>
-            We may update this Privacy Policy from time to time. We will notify you of any changes
-            by posting the new Privacy Policy on this page and updating the "Last updated" date.
+            We use it to run the app, fix problems, improve performance, and understand how the
+            app is used. This information is not linked to your child’s identity.
           </p>
 
-          <h2>Contact Us</h2>
+          <h2>4. Advertising</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at:{' '}
-            <a href="mailto:info@robifazio.com">info@robifazio.com</a>
+            The free version of HULM includes advertising from Google AdMob. Ads in HULM are set
+            as child-directed and non-personalized, which means they are not based on your
+            child’s interests or past behavior. Ad providers may still collect limited technical
+            data to deliver and measure ads. Premium removes all ads.
           </p>
 
-          <p className="privacy-agreement">
-            By using our App, you agree to the collection and use of information in accordance
-            with this Privacy Policy.
+          <h2>5. Purchases</h2>
+          <p>
+            Premium purchases are processed by Apple (App Store) or Google (Google Play). We do
+            not receive or store your payment details.
+          </p>
+
+          <h2>6. Analytics and measuring our own advertising</h2>
+          <p>
+            We may use Google Firebase / Google Analytics to understand how many people install
+            and open the app, and to measure whether our own ad campaigns work (for example,
+            whether an install came from an ad). This is aggregated data and is not used to
+            identify children.
+          </p>
+
+          <h2>7. How we use information</h2>
+          <p>We use information only to:</p>
+          <ul>
+            <li>provide and maintain the app</li>
+            <li>improve and fix the app</li>
+            <li>show ads in the free version</li>
+            <li>process purchases through the app stores</li>
+            <li>analyze usage and measure our own campaigns, in aggregate</li>
+          </ul>
+
+          <h2>8. Sharing</h2>
+          <p>
+            We do not sell personal information. We share technical information only with the
+            service providers that help us run the app (Google AdMob, Google Firebase, Apple, and
+            Google Play), and only as needed to provide their service.
+          </p>
+
+          <h2>9. Children’s privacy</h2>
+          <p>
+            HULM is made for children to use with a parent or guardian. We do not knowingly
+            collect personal information from children under 13 (or under 15 in France). The app
+            needs no sign-up. If you think a child has given us personal information, contact us
+            and we will delete it.
+          </p>
+
+          <h2>10. Your rights under the GDPR</h2>
+          <p>
+            We are based in France and follow the GDPR. The data controller is Robi Fazio,{' '}
+            <a href="mailto:info@robifazio.com">info@robifazio.com</a>. You have the right to
+            access, correct, delete, restrict, or object to the processing of your data, and the
+            right to data portability. Because HULM does not hold data that identifies you, we may
+            need further information to find any data about you. You can also file a complaint
+            with the French data protection authority, the CNIL. Where we rely on a legal basis,
+            it is our legitimate interest in running and improving the app, or your consent where
+            the law requires it.
+          </p>
+
+          <h2>11. Security and retention</h2>
+          <p>
+            We take reasonable technical and organizational steps to protect information. Data on
+            your device stays until you delete the app. Data held by third parties follows their
+            own policies, such as Google’s Privacy Policy.
+          </p>
+
+          <h2>12. Changes</h2>
+          <p>
+            We may update this policy. We will post the new version on this page and change the
+            “Last updated” date. For significant changes, we will also inform you in the app.
+          </p>
+
+          <h2>13. Contact</h2>
+          <p>
+            Robi Fazio – <a href="mailto:info@robifazio.com">info@robifazio.com</a>
           </p>
         </div>
       </main>
