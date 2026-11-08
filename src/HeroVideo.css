@@ -71,6 +71,21 @@
   }
 }
 
+/* iPad Pro 12.9 landscape (touch devices, 1366px to 1439px) */
+@media (min-width: 1366px) and (max-width: 1439px) and (hover: none) and (pointer: coarse) {
+  .hero {
+    --hero-video-zoom: 1.52;
+    --hero-video-origin-x: 25%;
+    --hero-video-origin-y: 50%;
+    --hero-video-pos-x: 50%;
+    --hero-video-shift-x: -15%;
+  }
+
+  .hero .hero-text {
+    padding-left: 3rem;
+  }
+}
+
 /* Laptop 1280 (1195px to 1365px) */
 @media (min-width: 1195px) and (max-width: 1365px) {
   .hero {
