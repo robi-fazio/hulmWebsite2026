@@ -1,5 +1,6 @@
 .hero {
-  padding-bottom: calc(5rem + 70px);
+  padding-top: 2.5rem;
+  padding-bottom: calc(2rem + 70px);
 }
 
 .hero-subtitle {
@@ -275,7 +276,8 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding-bottom: calc(5rem + 40px);
+    padding-top: 2rem;
+    padding-bottom: calc(2rem + 40px);
   }
 
   .how-section,
