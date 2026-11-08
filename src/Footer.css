@@ -46,6 +46,33 @@
   margin: 0 !important;
 }
 
+.kofi-inline a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 58px !important;
+  min-width: 190px;
+  padding: 0 1.75rem !important;
+  border-radius: 12px !important;
+  font-size: 1.15rem !important;
+  line-height: 58px !important;
+}
+
+.kofi-inline a span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.15rem !important;
+  line-height: 58px !important;
+}
+
+.kofi-inline a img {
+  height: 32px !important;
+  width: auto !important;
+  margin: 0 0.6rem 0 0 !important;
+  vertical-align: middle;
+}
+
 .footer-inner .footer-copy {
   grid-column: 1 / -1;
   width: auto;
@@ -65,5 +92,15 @@
   .footer-inner .footer-nav,
   .footer-inner > .btn {
     justify-self: center;
+  }
+
+  .kofi-inline a,
+  .kofi-inline a span {
+    height: 52px !important;
+    line-height: 52px !important;
+  }
+
+  .kofi-inline a span {
+    height: auto !important;
   }
 }
