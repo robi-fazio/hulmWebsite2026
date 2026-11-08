@@ -93,62 +93,37 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="quest-section">
-        <div className="quest-inner">
-          <div className="quest-splash">
-            <img src="/splash3.png" alt="Hurry Up Little Monster illustration" />
-          </div>
-          <div className="quest-text">
-            <p>
-              With Hulm, every completed timer unlocks a cute monster collectible, transforming
-              mundane moments into playful, rewarding experiences. The app includes ready-made
-              timers for common routines (like brushing teeth or cleaning up), plus the flexibility
-              for parents and kids to create their own custom challenges.
-            </p>
-          </div>
-          <div className="quest-points">
-            <div className="quest-point">
-              <h3>Turn time into something tangible:</h3>
-              <p>
-                Visual timers make the abstract concept of time concrete for kids, helping them
-                understand what "five more minutes" really means.
-              </p>
-            </div>
-            <div className="quest-point">
-              <h3>Ease transitions:</h3>
-              <p>
-                Timers prepare children for upcoming changes, reducing anxiety and meltdowns
-                when it's time to switch activities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="daily-life" className="care-section">
         <div className="care-inner">
           <h2>For children who find daily life harder</h2>
-          <div className="care-text">
-            <p>
-              Some children find it hard to start a task, stay with it, or switch to the next
-              thing. Time can feel invisible, and the usual flow of the day can feel
-              unpredictable. Many parents describe the same pattern: repeated reminders, rising
-              tension, and a lot of "five more minutes."
-            </p>
-            <p>
-              HULM was made for those moments. A visual timer shows how much time is left. A
-              task list breaks a routine into small steps. A friendly reward gives every small
-              success a visible moment of celebration, and a collection of monsters to be proud
-              of.
-            </p>
-            <p>
-              Every child is different. HULM is a tool that families can try, not a promise of
-              results.
-            </p>
-            <p className="care-note">
-              HULM is an everyday family tool. It is not a medical, therapeutic, or diagnostic
-              product and does not replace professional advice.
-            </p>
+          <div className="care-grid">
+            <div className="care-col">
+              <p>
+                Some children find it hard to start a task, stay with it, or switch to the next
+                thing. Time can feel invisible, and the usual flow of the day can feel
+                unpredictable. Many parents describe the same pattern: repeated reminders, rising
+                tension, and a lot of "five more minutes."
+              </p>
+              <p>
+                HULM was made for those moments. A visual timer shows how much time is left. A
+                task list breaks a routine into small steps. A friendly reward gives every small
+                success a visible moment of celebration, and a collection of monsters to be proud
+                of.
+              </p>
+            </div>
+            <div className="care-col">
+              <p>
+                Every child is different. HULM is a tool that families can try, not a promise of
+                results.
+              </p>
+              <p className="care-note">
+                HULM is an everyday family tool. It is not a medical, therapeutic, or diagnostic
+                product and does not replace professional advice.
+              </p>
+            </div>
+            <div className="care-col care-col--image">
+              <img src="/splash3.png" alt="Hurry Up Little Monster illustration" />
+            </div>
           </div>
         </div>
       </section>

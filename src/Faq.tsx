@@ -88,6 +88,13 @@ const faqItems: FaqItem[] = [
   },
 ];
 
+const FIRST_COLUMN_COUNT = 7;
+
+const columns: FaqItem[][] = [
+  faqItems.slice(0, FIRST_COLUMN_COUNT),
+  faqItems.slice(FIRST_COLUMN_COUNT),
+];
+
 type FaqProps = {
   onContactClick: () => void;
 };
@@ -100,49 +107,54 @@ function Faq({ onContactClick }: FaqProps) {
       <div className="faq-inner">
         <h2>Parent FAQ</h2>
         <p className="section-intro">Quick answers to the questions parents ask us most.</p>
-        <div className="faq-list">
-          {faqItems.map((item, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div className={`faq-item${isOpen ? ' faq-item--open' : ''}`} key={item.question}>
-                <h3 className="faq-heading">
-                  <button
-                    type="button"
-                    className="faq-question"
-                    id={`faq-question-${index}`}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${index}`}
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                  >
-                    <span>{item.question}</span>
-                    <span className="faq-icon" aria-hidden="true" />
-                  </button>
-                </h3>
-                <div
-                  className="faq-answer-wrap"
-                  id={`faq-answer-${index}`}
-                  role="region"
-                  aria-labelledby={`faq-question-${index}`}
-                >
-                  <div className="faq-answer">
-                    {item.answer.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                    {item.extra === 'privacy' && (
-                      <p>
-                        Read the details in our <Link to="/privacy-policy">Privacy Policy</Link>.
-                      </p>
-                    )}
-                    {item.extra === 'contact' && (
-                      <button type="button" className="btn btn-primary" onClick={onContactClick}>
-                        CONTACT US
+        <div className="faq-columns">
+          {columns.map((column, columnIndex) => (
+            <div className="faq-column" key={columnIndex}>
+              {column.map((item) => {
+                const index = faqItems.indexOf(item);
+                const isOpen = openIndex === index;
+                return (
+                  <div className={`faq-item${isOpen ? ' faq-item--open' : ''}`} key={item.question}>
+                    <h3 className="faq-heading">
+                      <button
+                        type="button"
+                        className="faq-question"
+                        id={`faq-question-${index}`}
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-${index}`}
+                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                      >
+                        <span>{item.question}</span>
+                        <span className="faq-icon" aria-hidden="true" />
                       </button>
-                    )}
+                    </h3>
+                    <div
+                      className="faq-answer-wrap"
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
+                    >
+                      <div className="faq-answer">
+                        {item.answer.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                        {item.extra === 'privacy' && (
+                          <p>
+                            Read the details in our <Link to="/privacy-policy">Privacy Policy</Link>.
+                          </p>
+                        )}
+                        {item.extra === 'contact' && (
+                          <button type="button" className="btn btn-primary" onClick={onContactClick}>
+                            CONTACT US
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
