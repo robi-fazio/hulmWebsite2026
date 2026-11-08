@@ -32,11 +32,26 @@
 .how-section::before {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 70px;
+  bottom: 0;
   z-index: -1;
   background-color: #D7C6AE;
-  -webkit-mask-image: radial-gradient(ellipse 50% 70px at 50% 0, transparent 99%, #000 100%);
-  mask-image: radial-gradient(ellipse 50% 70px at 50% 0, transparent 99%, #000 100%);
+}
+
+.how-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 71px;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath fill='%23D7C6AE' d='M0 70C720 70 720 0 1440 0L1440 70L0 70Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .care-section {
@@ -277,8 +292,11 @@
   }
 
   .how-section::before {
-    -webkit-mask-image: radial-gradient(ellipse 50% 40px at 50% 0, transparent 99%, #000 100%);
-    mask-image: radial-gradient(ellipse 50% 40px at 50% 0, transparent 99%, #000 100%);
+    top: 40px;
+  }
+
+  .how-section::after {
+    height: 41px;
   }
 
   .care-section::before {
