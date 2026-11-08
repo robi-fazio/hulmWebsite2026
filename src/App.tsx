@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import './Sections.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
 import Header from './Header';
 import HeroVideo from './HeroVideo';
+import Faq from './Faq';
 
 const illustrators = [
   {
@@ -23,6 +25,21 @@ const illustrators = [
   },
 ];
 
+const howSteps = [
+  {
+    title: 'Pick a timer or a task list',
+    text: 'Use a ready-made timer (brushing teeth, tidying up, getting dressed, nap time) or create your own.',
+  },
+  {
+    title: 'Watch time disappear',
+    text: 'A green screen slowly slides away to reveal a friendly monster, so time becomes something your child can see.',
+  },
+  {
+    title: 'Collect your reward',
+    text: 'Every completed timer or task unlocks a monster. Collect enough and a memory game unlocks, played with the monsters your child has earned.',
+  },
+];
+
 function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
@@ -38,9 +55,10 @@ function HomePage() {
               <br />
               into fun quests
             </h1>
+            <p className="hero-subtitle">Visual timer &amp; task lists for kids</p>
             <p className="hero-description">
-              Hulm is a playful timer app that helps kids brush teeth, tidy up, get dressed, and more—
-              without endless negotiations. Every completed timer unlocks a cute monster, so routines
+              A visual timer and task list app where every finished task earns a cute monster.
+              Built for families who want smoother mornings, calmer transitions, and routines that
               feel like a game, not a fight.
             </p>
             <p className="hero-highlight">
@@ -56,6 +74,22 @@ function HomePage() {
             </div>
           </div>
           <HeroVideo />
+        </div>
+      </section>
+
+      <section id="how-it-works" className="how-section">
+        <div className="how-inner">
+          <h2>How it works</h2>
+          <p className="section-intro">Three simple steps turn any routine into a small adventure.</p>
+          <ol className="how-steps">
+            {howSteps.map((step, index) => (
+              <li className="how-step" key={step.title}>
+                <div className="how-number" aria-hidden="true">{index + 1}</div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -90,6 +124,36 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <section id="daily-life" className="care-section">
+        <div className="care-inner">
+          <h2>For children who find daily life harder</h2>
+          <div className="care-text">
+            <p>
+              Some children find it hard to start a task, stay with it, or switch to the next
+              thing. Time can feel invisible, and the usual flow of the day can feel
+              unpredictable. Many parents describe the same pattern: repeated reminders, rising
+              tension, and a lot of "five more minutes."
+            </p>
+            <p>
+              HULM was made for those moments. A visual timer shows how much time is left. A
+              task list breaks a routine into small steps. A friendly reward gives every small
+              success a visible moment of celebration, and a collection of monsters to be proud
+              of.
+            </p>
+            <p>
+              Every child is different. HULM is a tool that families can try, not a promise of
+              results.
+            </p>
+            <p className="care-note">
+              HULM is an everyday family tool. It is not a medical, therapeutic, or diagnostic
+              product and does not replace professional advice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Faq onContactClick={() => setIsContactOpen(true)} />
 
       <section className="illustrators-section">
         <div className="illustrators-inner">
