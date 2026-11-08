@@ -1,0 +1,25 @@
+.illustrators-section {
+  padding-bottom: 7rem;
+}
+
+.footer-inner {
+  row-gap: 1rem;
+}
+
+.footer .store-badges {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .illustrators-section {
+    padding-bottom: 5rem;
+  }
+
+  .footer-inner {
+    justify-content: center;
+  }
+
+  .footer .store-badges {
+    justify-content: center;
+  }
+}

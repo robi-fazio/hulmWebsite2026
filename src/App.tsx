@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './Sections.css';
+import './Footer.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
 import Header from './Header';
@@ -152,6 +153,14 @@ function HomePage() {
             <Link to="/">HOME</Link>
             <Link to="/privacy-policy">PRIVACY POLICY</Link>
           </nav>
+          <div className="store-badges">
+            <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
+              <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+            </a>
+            <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+              <img src="/btn_AppStore.png" alt="Download on the App Store" />
+            </a>
+          </div>
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
             CONTACT ME
           </button>
