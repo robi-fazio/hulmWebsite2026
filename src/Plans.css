@@ -49,6 +49,21 @@
   margin: 0;
 }
 
+.plans-intro .store-badges {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.75rem;
+}
+
+.plans-intro .store-badges a {
+  margin-right: 0;
+  margin-bottom: 0.75rem;
+}
+
+.plans-intro .store-badges a:last-child {
+  margin-bottom: 0;
+}
+
 .plan-card {
   background-color: #F8F4EC;
   border: 3px solid transparent;
@@ -158,6 +173,17 @@
     grid-column: 1 / -1;
     max-width: 800px;
   }
+
+  .plans-intro .store-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .plans-intro .store-badges a {
+    margin-right: 1rem;
+    margin-bottom: 0.75rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -179,6 +205,16 @@
 
   .plans-intro p {
     font-size: 1.08rem;
+  }
+
+  .plans-intro .store-badges {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
+
+  .plans-intro .store-badges a {
+    margin-right: 0;
   }
 
   .plan-card {

@@ -26,6 +26,14 @@ function Plans() {
               to Premium when you want an ad-free app, saved timers, task lists and a profile for
               each child.
             </p>
+            <div className="store-badges">
+              <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
+                <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+              </a>
+              <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+                <img src="/btn_AppStore.png" alt="Download on the App Store" />
+              </a>
+            </div>
           </div>
 
           <div className="plan-card">
