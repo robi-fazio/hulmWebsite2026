@@ -122,7 +122,7 @@ function HomePage() {
               </p>
             </div>
             <div className="care-col care-col--image">
-              <img src="/splash3.png" alt="Hurry Up Little Monster illustration" />
+              <img src="/splash4.png" alt="Hurry Up Little Monster illustration" />
             </div>
           </div>
         </div>
