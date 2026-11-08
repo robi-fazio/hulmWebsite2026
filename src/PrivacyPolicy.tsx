@@ -39,9 +39,10 @@ function PrivacyPolicy() {
           <h2>2. Information stored on your device</h2>
           <p>
             HULM stores the following locally on your device: monsters collected, timers and task
-            lists (including the custom ones you save with Premium), memory game progress, and
-            child profiles. We do not have access to this data. We recommend using a nickname or
-            first name for profiles, never a full name. Deleting the app removes this data.
+            lists (including the custom ones you save with Premium), memory game progress, child
+            profiles, and the parental code (PIN) you choose, which is stored only as a hashed
+            value. We do not have access to this data. We recommend using a nickname or first
+            name for profiles, never a full name. Deleting the app removes this data.
           </p>
 
           <h2>3. Information collected automatically</h2>
@@ -58,16 +59,23 @@ function PrivacyPolicy() {
             <li>Usage data (such as the features used and interaction with ads)</li>
           </ul>
           <p>
-            We use it to run the app, fix problems, improve performance, and understand how the
-            app is used. This information is not linked to your child’s identity.
+            This information is used by these providers to deliver and measure ads and to keep
+            the services running. We do not link it to a name, an account, or any contact
+            details, because HULM does not collect them.
           </p>
 
           <h2>4. Advertising</h2>
           <p>
-            The free version of HULM includes advertising from Google AdMob. Ads in HULM are set
-            as child-directed and non-personalized, which means they are not based on your
-            child’s interests or past behavior. Ad providers may still collect limited technical
-            data to deliver and measure ads. Premium removes all ads.
+            The free version of HULM includes advertising from Google AdMob. To deliver and
+            measure ads, Google and its ad partners may collect technical data such as your
+            device’s advertising identifier and how you interact with ads. Depending on your
+            device settings and the country you are in, ads may be personalized.
+          </p>
+          <p>
+            On iPhone and iPad, the app asks for your permission before tracking, and you can
+            change your choice at any time in your device settings. On Android, you can reset
+            your advertising ID or opt out of ad personalization in your device’s Google
+            settings. Premium removes all ads.
           </p>
 
           <h2>5. Purchases</h2>
@@ -76,32 +84,23 @@ function PrivacyPolicy() {
             not receive or store your payment details.
           </p>
 
-          <h2>6. Analytics and measuring our own advertising</h2>
-          <p>
-            We may use Google Firebase / Google Analytics to understand how many people install
-            and open the app, and to measure whether our own ad campaigns work (for example,
-            whether an install came from an ad). This is aggregated data and is not used to
-            identify children.
-          </p>
-
-          <h2>7. How we use information</h2>
+          <h2>6. How we use information</h2>
           <p>We use information only to:</p>
           <ul>
             <li>provide and maintain the app</li>
             <li>improve and fix the app</li>
             <li>show ads in the free version</li>
             <li>process purchases through the app stores</li>
-            <li>analyze usage and measure our own campaigns, in aggregate</li>
           </ul>
 
-          <h2>8. Sharing</h2>
+          <h2>7. Sharing</h2>
           <p>
             We do not sell personal information. We share technical information only with the
-            service providers that help us run the app (Google AdMob, Google Firebase, Apple, and
-            Google Play), and only as needed to provide their service.
+            service providers that help us run the app (Google AdMob, Apple, and Google Play),
+            and only as needed to provide their service.
           </p>
 
-          <h2>9. Children’s privacy</h2>
+          <h2>8. Children’s privacy</h2>
           <p>
             HULM is made for children to use with a parent or guardian. We do not knowingly
             collect personal information from children under 13 (or under 15 in France). The app
@@ -109,7 +108,7 @@ function PrivacyPolicy() {
             and we will delete it.
           </p>
 
-          <h2>10. Your rights under the GDPR</h2>
+          <h2>9. Your rights under the GDPR</h2>
           <p>
             We are based in France and follow the GDPR. The data controller is Robi Fazio,{' '}
             <a href="mailto:info@robifazio.com">info@robifazio.com</a>. You have the right to
@@ -121,20 +120,20 @@ function PrivacyPolicy() {
             the law requires it.
           </p>
 
-          <h2>11. Security and retention</h2>
+          <h2>10. Security and retention</h2>
           <p>
             We take reasonable technical and organizational steps to protect information. Data on
             your device stays until you delete the app. Data held by third parties follows their
             own policies, such as Google’s Privacy Policy.
           </p>
 
-          <h2>12. Changes</h2>
+          <h2>11. Changes</h2>
           <p>
             We may update this policy. We will post the new version on this page and change the
             “Last updated” date. For significant changes, we will also inform you in the app.
           </p>
 
-          <h2>13. Contact</h2>
+          <h2>12. Contact</h2>
           <p>
             Robi Fazio – <a href="mailto:info@robifazio.com">info@robifazio.com</a>
           </p>
