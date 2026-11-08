@@ -6,6 +6,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
 import Header from './Header';
 import HeroVideo from './HeroVideo';
+import CareCarousel from './CareCarousel';
 import Faq from './Faq';
 import Plans from './Plans';
 
@@ -94,40 +95,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="daily-life" className="care-section">
-        <div className="care-inner">
-          <h2>For children who find daily life harder</h2>
-          <div className="care-grid">
-            <div className="care-col">
-              <p>
-                Some children find it hard to start a task, stay with it, or switch to the next
-                thing. Time can feel invisible, and the usual flow of the day can feel
-                unpredictable. Many parents describe the same pattern: repeated reminders, rising
-                tension, and a lot of "five more minutes."
-              </p>
-              <p>
-                HULM was made for those moments. A visual timer shows how much time is left. A
-                task list breaks a routine into small steps. A friendly reward gives every small
-                success a visible moment of celebration, and a collection of monsters to be proud
-                of.
-              </p>
-            </div>
-            <div className="care-col">
-              <p>
-                Every child is different. HULM is a tool that families can try, not a promise of
-                results.
-              </p>
-              <p className="care-note">
-                HULM is an everyday family tool. It is not a medical, therapeutic, or diagnostic
-                product and does not replace professional advice.
-              </p>
-            </div>
-            <div className="care-col care-col--image">
-              <img src="/splash4.png" alt="Hurry Up Little Monster illustration" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <CareCarousel />
 
       <Faq onContactClick={() => setIsContactOpen(true)} />
 
