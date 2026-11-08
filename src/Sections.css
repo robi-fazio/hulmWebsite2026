@@ -21,6 +21,11 @@
   padding: 4.5rem 4rem;
 }
 
+.care-section,
+.faq-section {
+  padding-bottom: calc(4.5rem + 70px);
+}
+
 .how-section {
   position: relative;
   z-index: 1;
@@ -75,11 +80,41 @@
 }
 
 .faq-section {
+  position: relative;
+  z-index: 2;
   background-color: #D7C6AE;
 }
 
+.faq-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -69px;
+  height: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath fill='%23D7C6AE' d='M0 70C720 70 720 0 1440 0L1440 70L0 70Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .illustrators-section {
+  position: relative;
+  z-index: 2;
   background-color: #E1D3C0;
+}
+
+.illustrators-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -69px;
+  height: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath fill='%23E1D3C0' d='M0 70C720 70 720 0 1440 0L1440 70L0 70Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .how-inner,
@@ -287,6 +322,11 @@
     padding-right: 1.5rem;
   }
 
+  .care-section,
+  .faq-section {
+    padding-bottom: calc(4.5rem + 40px);
+  }
+
   .how-section {
     margin-top: -40px;
     padding-top: calc(4.5rem + 40px);
@@ -301,7 +341,9 @@
     height: 41px;
   }
 
-  .care-section::before {
+  .care-section::before,
+  .faq-section::before,
+  .illustrators-section::before {
     top: -39px;
     height: 40px;
   }

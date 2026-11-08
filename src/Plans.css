@@ -1,9 +1,24 @@
 .plans-section {
+  position: relative;
+  z-index: 2;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 4.5rem 4rem;
+  padding: 4.5rem 4rem calc(4.5rem + 70px);
   background-color: #EFE7DA;
+}
+
+.plans-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -69px;
+  height: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath fill='%23EFE7DA' d='M0 0C720 0 720 70 1440 70L0 70Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .plans-inner {
@@ -44,7 +59,7 @@
 }
 
 .plan-card--premium {
-  background-color: #FFFFFF;
+  background-color: #F8F4EC;
   border-color: #974590;
   box-shadow: 0 10px 30px rgba(151, 69, 144, 0.15);
 }
@@ -149,6 +164,12 @@
   .plans-section {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: calc(4.5rem + 40px);
+  }
+
+  .plans-section::before {
+    top: -39px;
+    height: 40px;
   }
 
   .plans-grid {
