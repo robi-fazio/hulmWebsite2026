@@ -157,15 +157,17 @@ function HomePage() {
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
             CONTACT ME
           </button>
-          <div className="store-badges">
-            <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
-              <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
-            </a>
-            <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
-              <img src="/btn_AppStore.png" alt="Download on the App Store" />
-            </a>
+          <div className="footer-store-row">
+            <div className="store-badges">
+              <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
+                <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+              </a>
+              <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+                <img src="/btn_AppStore.png" alt="Download on the App Store" />
+              </a>
+            </div>
+            <KofiWidget />
           </div>
-          <KofiWidget />
           <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
         </div>
       </footer>

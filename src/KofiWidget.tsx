@@ -1,53 +1,48 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-const KOFI_SCRIPT_SRC = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+const KOFI_SCRIPT_SRC = 'https://storage.ko-fi.com/cdn/widget/Widget_2.js';
 
 type KofiWindow = Window & {
-  kofiWidgetOverlay?: {
-    draw: (username: string, options: Record<string, string>) => void;
+  kofiwidget2?: {
+    init: (text: string, color: string, id: string) => void;
+    getHTML: () => string;
   };
 };
 
-let widgetDrawn = false;
-
-function drawWidget() {
-  const kofiWindow = window as KofiWindow;
-  if (widgetDrawn || !kofiWindow.kofiWidgetOverlay) return;
-  widgetDrawn = true;
-  kofiWindow.kofiWidgetOverlay.draw('robifazio', {
-    type: 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#794bc4',
-    'floating-chat.donateButton.text-color': '#fff',
-  });
-}
-
 function KofiWidget() {
-  useEffect(() => {
-    if (widgetDrawn) return undefined;
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    if ((window as KofiWindow).kofiWidgetOverlay) {
-      drawWidget();
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return undefined;
+
+    const render = () => {
+      const widget = (window as KofiWindow).kofiwidget2;
+      if (!widget) return;
+      widget.init('Support me', '#794bc4', 'robifazio');
+      container.innerHTML = widget.getHTML();
+    };
+
+    if ((window as KofiWindow).kofiwidget2) {
+      render();
       return undefined;
     }
 
-    const existing = document.querySelector<HTMLScriptElement>(
+    let script = document.querySelector<HTMLScriptElement>(
       `script[src="${KOFI_SCRIPT_SRC}"]`,
     );
-    if (existing) {
-      existing.addEventListener('load', drawWidget);
-      return () => existing.removeEventListener('load', drawWidget);
+    if (!script) {
+      script = document.createElement('script');
+      script.src = KOFI_SCRIPT_SRC;
+      script.async = true;
+      document.body.appendChild(script);
     }
-
-    const script = document.createElement('script');
-    script.src = KOFI_SCRIPT_SRC;
-    script.async = true;
-    script.addEventListener('load', drawWidget);
-    document.body.appendChild(script);
-    return () => script.removeEventListener('load', drawWidget);
+    const loadedScript = script;
+    loadedScript.addEventListener('load', render);
+    return () => loadedScript.removeEventListener('load', render);
   }, []);
 
-  return null;
+  return <div className="kofi-inline" ref={containerRef} />;
 }
 
 export default KofiWidget;

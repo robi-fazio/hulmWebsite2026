@@ -21,10 +21,29 @@
   justify-self: end;
 }
 
-.footer .store-badges {
+.footer-store-row {
   grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 1rem 1.5rem;
   margin: 0.5rem 0;
+}
+
+.footer-store-row .store-badges {
+  margin: 0;
+}
+
+.kofi-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kofi-inline .btn-container {
+  float: none !important;
+  margin: 0 !important;
 }
 
 .footer-inner .footer-copy {
