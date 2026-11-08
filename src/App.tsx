@@ -10,6 +10,7 @@ import HeroVideo from './HeroVideo';
 import CareCarousel from './CareCarousel';
 import Faq from './Faq';
 import Plans from './Plans';
+import KofiWidget from './KofiWidget';
 
 const illustrators = [
   {
@@ -153,6 +154,9 @@ function HomePage() {
             <Link to="/">HOME</Link>
             <Link to="/privacy-policy">PRIVACY POLICY</Link>
           </nav>
+          <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
+            CONTACT ME
+          </button>
           <div className="store-badges">
             <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
               <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
@@ -161,9 +165,7 @@ function HomePage() {
               <img src="/btn_AppStore.png" alt="Download on the App Store" />
             </a>
           </div>
-          <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
-          </button>
+          <KofiWidget />
           <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
         </div>
       </footer>

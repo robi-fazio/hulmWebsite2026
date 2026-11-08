@@ -3,11 +3,33 @@
 }
 
 .footer-inner {
-  row-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.footer-inner .logo {
+  justify-self: start;
+}
+
+.footer-inner .footer-nav {
+  justify-self: center;
+}
+
+.footer-inner > .btn {
+  justify-self: end;
 }
 
 .footer .store-badges {
+  grid-column: 1 / -1;
+  justify-content: center;
   margin: 0.5rem 0;
+}
+
+.footer-inner .footer-copy {
+  grid-column: 1 / -1;
+  width: auto;
 }
 
 @media (max-width: 900px) {
@@ -16,10 +38,13 @@
   }
 
   .footer-inner {
-    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
-  .footer .store-badges {
-    justify-content: center;
+  .footer-inner .logo,
+  .footer-inner .footer-nav,
+  .footer-inner > .btn {
+    justify-self: center;
   }
 }
