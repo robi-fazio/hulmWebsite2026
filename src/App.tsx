@@ -7,6 +7,7 @@ import ContactModal from './ContactModal';
 import Header from './Header';
 import HeroVideo from './HeroVideo';
 import Faq from './Faq';
+import Plans from './Plans';
 
 const illustrators = [
   {
@@ -129,6 +130,8 @@ function HomePage() {
       </section>
 
       <Faq onContactClick={() => setIsContactOpen(true)} />
+
+      <Plans />
 
       <section className="illustrators-section">
         <div className="illustrators-inner">
