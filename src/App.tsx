@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './Sections.css';
+import './HowMonster.css';
 import './Footer.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
@@ -41,6 +42,7 @@ const howSteps = [
   {
     title: 'Collect your reward',
     text: 'Every completed timer or task unlocks a monster. Collect enough and a memory game unlocks, played with the monsters your child has earned.',
+    monster: '/monster12.png',
   },
 ];
 
@@ -88,6 +90,9 @@ function HomePage() {
           <ol className="how-steps">
             {howSteps.map((step, index) => (
               <li className="how-step" key={step.title}>
+                {step.monster && (
+                  <img src={step.monster} alt="" aria-hidden="true" className="how-monster" />
+                )}
                 <div className="how-number" aria-hidden="true">{index + 1}</div>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
