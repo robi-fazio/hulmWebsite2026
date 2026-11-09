@@ -53,7 +53,7 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: #997d57;
+  background-color: #a8957a;
   color: #CFC3B3;
   display: flex;
   align-items: center;
@@ -111,7 +111,7 @@
 }
 
 .care-dot--active::after {
-  background-color: #997d57;
+  background-color: #a8957a;
   transform: scale(1.25);
 }
 
