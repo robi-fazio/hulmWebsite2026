@@ -7,6 +7,10 @@ const sharedFeatures = [
   'Memory game, played with the monsters your child has earned',
 ];
 
+const premiumFeatures = sharedFeatures.map((feature, index) =>
+  index === 0 ? 'Ready-made timers' : feature,
+);
+
 const premiumExtras = [
   'No ads, ever',
   'Save your own custom timers',
@@ -51,7 +55,7 @@ function Plans() {
             <h3 className="plan-name">Premium</h3>
             <p className="plan-tagline">Everything in Free, and more.</p>
             <ul className="plan-list">
-              {sharedFeatures.map((feature) => (
+              {premiumFeatures.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
               <li className="plan-subhead">Plus, only in Premium</li>

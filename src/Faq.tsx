@@ -12,13 +12,13 @@ const faqItems: FaqItem[] = [
   {
     question: 'What is HULM?',
     answer: [
-      'HULM (Hurry Up Little Monster) is a visual timer and task list app for families. A green screen slowly slides away to reveal a friendly monster, so children can see how much time is left. Every finished timer or task earns a monster to collect.',
+      'HULM (Hurry Up Little Monster) is a visual timer and task list app for families. A green curtain slowly slides away to reveal a friendly monster, so children can see how much time is left. Every finished timer or task earns a monster to collect.',
     ],
   },
   {
     question: 'How does it work?',
     answer: [
-      'Pick a ready-made timer (brushing teeth, tidying up, chores, nap time) or set your own from 1 to 999 minutes. Your child watches the screen reveal the monster, and when the timer ends the monster joins their collection. Task lists work the same way: finish a task, collect a monster.',
+      'Pick a ready-made timer (brushing teeth, tidying up, chores, nap time) or set your own from 1 to 999 minutes. Your child watches the screen reveal the monster, and when the timer ends the monster joins their collection. Task lists work the same way: finish a task list, collect a monster.',
     ],
   },
   {
@@ -42,7 +42,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'What are the rewards?',
     answer: [
-      'Each completed timer or task unlocks a new monster. When your child has collected enough monsters, a memory game unlocks that is played with those monsters.',
+      'Each completed timer or task list unlocks a new monster. When your child has collected enough monsters, a memory game unlocks that is played with those monsters.',
     ],
   },
   {
@@ -72,7 +72,7 @@ const faqItems: FaqItem[] = [
   {
     question: "What if my child gets upset or doesn't want to use the timer?",
     answer: [
-      'That is normal. A few ideas parents try: let your child choose the timer or the monster, start with a short timer and a task they enjoy, use the timer together with your child instead of imposing it, celebrate the monster together, and try again another day if it is not working.',
+      'That is normal. A few ideas parents try: let your child choose the timer, start with a short timer and a task they enjoy, use the timer together with your child instead of imposing it, celebrate the monster together, and try again another day if it is not working.',
     ],
   },
   {

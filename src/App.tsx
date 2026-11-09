@@ -38,11 +38,11 @@ const howSteps = [
   },
   {
     title: 'Watch time disappear',
-    text: 'A green screen slowly slides away to reveal a friendly monster, so time becomes something your child can see.',
+    text: 'A green curtain slowly slides away to reveal a friendly monster, so time becomes something your child can see.',
   },
   {
     title: 'Collect your reward',
-    text: 'Every completed timer or task unlocks a monster. Collect enough and a memory game unlocks, played with the monsters your child has earned.',
+    text: 'Every completed timer or task list unlocks a monster. Collect enough and a memory game unlocks, played with the monsters your child has earned.',
     monster: '/monster12.png',
   },
 ];
