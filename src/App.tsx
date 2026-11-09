@@ -78,9 +78,9 @@ function HomePage() {
               </div>
               <div className="hero-sticker" aria-hidden="true">
                 <span>
-                  Get it
-                  <br />
-                  now!
+                  <span className="sticker-num">8</span>
+                  languages
+                  <span className="sticker-small">and counting!</span>
                 </span>
               </div>
             </div>

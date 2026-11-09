@@ -20,6 +20,7 @@
   flex: 0 0 auto;
   width: calc(var(--badge-h) * 2);
   height: calc(var(--badge-h) * 2);
+  font-size: calc(var(--badge-h) * 0.28);
   box-sizing: border-box;
   border: 4px solid #B7D8AC;
   border-radius: 50%;
@@ -36,9 +37,21 @@
   color: #FFFFFF;
   font-family: 'Roboto Slab', 'Georgia', serif;
   font-weight: 700;
-  font-size: 1.35rem;
-  line-height: 1.15;
+  font-size: 1em;
+  line-height: 1.1;
   transform: rotate(10deg);
+}
+
+.hero-sticker .sticker-num {
+  display: block;
+  font-size: 2.1em;
+  line-height: 1;
+}
+
+.hero-sticker .sticker-small {
+  display: block;
+  font-size: 0.78em;
+  margin-top: 0.1em;
 }
 
 @media (max-width: 900px) {
