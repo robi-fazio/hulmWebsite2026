@@ -20,38 +20,24 @@
   flex: 0 0 auto;
   width: calc(var(--badge-h) * 2);
   height: calc(var(--badge-h) * 2);
-  font-size: calc(var(--badge-h) * 0.28);
   box-sizing: border-box;
   border: 4px solid #B7D8AC;
   border-radius: 50%;
   background: linear-gradient(135deg, #BC7DB6 0%, #974590 65%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   box-shadow: 0 6px 14px rgba(66, 60, 52, 0.2);
-}
-
-.hero-sticker span {
-  display: block;
-  color: #FFFFFF;
-  font-family: 'Roboto Slab', 'Georgia', serif;
-  font-weight: 700;
-  font-size: 1em;
-  line-height: 1.1;
   transform: rotate(10deg);
 }
 
-.hero-sticker .sticker-num {
+.hero-sticker svg {
   display: block;
-  font-size: 2.1em;
-  line-height: 1;
+  width: 100%;
+  height: 100%;
 }
 
-.hero-sticker .sticker-small {
-  display: block;
-  font-size: 0.78em;
-  margin-top: 0.1em;
+.hero-sticker text {
+  fill: #FFFFFF;
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {

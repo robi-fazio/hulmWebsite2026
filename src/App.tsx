@@ -77,11 +77,29 @@ function HomePage() {
                 </a>
               </div>
               <div className="hero-sticker" aria-hidden="true">
-                <span>
-                  <span className="sticker-num">8</span>
-                  languages
-                  <span className="sticker-small">and counting!</span>
-                </span>
+                <svg viewBox="0 0 100 100" focusable="false">
+                  <text x="50" y="35" textAnchor="middle" fontSize="30">8</text>
+                  <text
+                    x="50"
+                    y="55"
+                    textAnchor="middle"
+                    fontSize="17"
+                    textLength="80"
+                    lengthAdjust="spacingAndGlyphs"
+                  >
+                    languages
+                  </text>
+                  <text
+                    x="50"
+                    y="74"
+                    textAnchor="middle"
+                    fontSize="10.5"
+                    textLength="62"
+                    lengthAdjust="spacingAndGlyphs"
+                  >
+                    and counting!
+                  </text>
+                </svg>
               </div>
             </div>
           </div>
