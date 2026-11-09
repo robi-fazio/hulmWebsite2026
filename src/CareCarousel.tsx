@@ -124,15 +124,25 @@ function CareCarousel() {
                       </p>
                       <p className="care-research-note">
                         Curious what studies have found about visual timers, visual schedules and
-                        rewards? See what research has looked at.
+                        rewards?
                       </p>
                       <button
                         type="button"
-                        className="btn btn-primary"
+                        className="btn btn-primary care-more-btn"
                         tabIndex={index === 0 ? 0 : -1}
                         onClick={() => goTo(1)}
                       >
-                        WHAT RESEARCH HAS LOOKED AT
+                        SEE WHAT RESEARCH HAS LOOKED AT
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                          <path
+                            d="M9 5l7 7-7 7"
+                            fill="none"
+                            stroke="#FFFFFF"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
                       </button>
                     </div>
                     <div className="care-col care-col--image">
