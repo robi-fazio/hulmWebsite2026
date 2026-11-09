@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sections.css';
+import './FaqFly.css';
 
 type FaqItem = {
   question: string;
@@ -95,6 +96,48 @@ const columns: FaqItem[][] = [
   faqItems.slice(FIRST_COLUMN_COUNT),
 ];
 
+const MONSTER_SIZE = 90;
+const MOVE_EVERY_MS = 9000;
+
+function FlyingMonster() {
+  const areaRef = useRef<HTMLDivElement>(null);
+  const [pose, setPose] = useState({ x: 0, y: 0, rotation: 10 });
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+
+    const move = () => {
+      const area = areaRef.current;
+      if (!area) return;
+      const maxX = Math.max(0, area.clientWidth - MONSTER_SIZE);
+      const maxY = Math.max(0, area.clientHeight - MONSTER_SIZE);
+      setPose({
+        x: Math.random() * maxX,
+        y: Math.random() * maxY,
+        rotation: Math.random() < 0.5 ? -10 : 10,
+      });
+    };
+
+    const first = window.setTimeout(move, 500);
+    const interval = window.setInterval(move, MOVE_EVERY_MS);
+    return () => {
+      window.clearTimeout(first);
+      window.clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className="faq-fly" ref={areaRef} aria-hidden="true">
+      <img
+        className="faq-fly-monster"
+        src="/monster13.png"
+        alt=""
+        style={{ transform: `translate(${pose.x}px, ${pose.y}px) rotate(${pose.rotation}deg)` }}
+      />
+    </div>
+  );
+}
+
 type FaqProps = {
   onContactClick: () => void;
 };
@@ -153,6 +196,7 @@ function Faq({ onContactClick }: FaqProps) {
                   </div>
                 );
               })}
+              {columnIndex === columns.length - 1 && <FlyingMonster />}
             </div>
           ))}
         </div>
