@@ -8,6 +8,7 @@ import './QrCode.css';
 import './Footer.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import GetApp from './GetApp';
+import NotFound from './NotFound';
 import ContactModal from './ContactModal';
 import Header from './Header';
 import HeroVideo from './HeroVideo';
@@ -219,6 +220,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/get" element={<GetApp />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
