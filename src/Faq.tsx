@@ -12,7 +12,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'What is HULM?',
     answer: [
-      'HULM (Hurry Up Little Monster) is a visual timer and task list app for families. A green curtain slowly slides away to reveal a friendly monster, so children can see how much time is left. Every finished timer or task earns a monster to collect.',
+      'HULM (Hurry Up Little Monster) is a visual timer and task list app for families. A green curtain slowly slides away to reveal a friendly monster, so children can see how much time is left. Every finished timer or task list earns a monster to collect.',
     ],
   },
   {

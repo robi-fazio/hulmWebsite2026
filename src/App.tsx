@@ -63,8 +63,8 @@ function HomePage() {
               into fun quests
             </h1>
             <p className="hero-description">
-              <strong>A visual timer and task list app</strong> where every finished task earns a cute
-              monster. Built for families who want smoother mornings, calmer transitions, and
+              <strong>A visual timer and task list app</strong> where every finished task list earns a
+              cute monster. Built for families who want smoother mornings, calmer transitions, and
               routines that feel like a game, not a fight.
             </p>
             <div className="hero-store-row">
