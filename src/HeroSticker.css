@@ -1,0 +1,59 @@
+.hero-text .hero-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-store-row {
+  --badge-h: 58px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.hero-store-row .store-badges {
+  width: auto;
+}
+
+.hero-sticker {
+  flex: 0 0 auto;
+  width: calc(var(--badge-h) * 2);
+  height: calc(var(--badge-h) * 2);
+  box-sizing: border-box;
+  border: 4px solid #B7D8AC;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #BC7DB6 0%, #974590 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(66, 60, 52, 0.2);
+}
+
+.hero-sticker span {
+  display: block;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  transform: rotate(10deg);
+}
+
+@media (max-width: 900px) {
+  .hero-text .hero-description {
+    font-size: 1.3rem;
+  }
+
+  .hero-store-row {
+    --badge-h: 52px;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-store-row .store-badges {
+    width: 100%;
+  }
+}

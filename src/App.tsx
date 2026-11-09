@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './Sections.css';
 import './HowMonster.css';
+import './HeroSticker.css';
 import './Footer.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import ContactModal from './ContactModal';
@@ -61,22 +62,27 @@ function HomePage() {
               <br />
               into fun quests
             </h1>
-            <p className="hero-subtitle">Visual timer &amp; task lists for kids</p>
             <p className="hero-description">
-              A visual timer and task list app where every finished task earns a cute monster.
-              Built for families who want smoother mornings, calmer transitions, and routines that
-              feel like a game, not a fight.
+              <strong>A visual timer and task list app</strong> where every finished task earns a cute
+              monster. Built for families who want smoother mornings, calmer transitions, and
+              routines that feel like a game, not a fight.
             </p>
-            <p className="hero-highlight">
-              Get HULM on iOS and Android. Start your first monster quest in under 1 minute!
-            </p>
-            <div className="store-badges">
-              <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
-                <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
-              </a>
-              <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
-                <img src="/btn_AppStore.png" alt="Download on the App Store" />
-              </a>
+            <div className="hero-store-row">
+              <div className="store-badges">
+                <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
+                  <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+                </a>
+                <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
+                  <img src="/btn_AppStore.png" alt="Download on the App Store" />
+                </a>
+              </div>
+              <div className="hero-sticker" aria-hidden="true">
+                <span>
+                  Get it
+                  <br />
+                  now!
+                </span>
+              </div>
             </div>
           </div>
           <HeroVideo />
