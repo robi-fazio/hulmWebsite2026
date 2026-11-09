@@ -4,8 +4,10 @@ import './App.css';
 import './Sections.css';
 import './HowMonster.css';
 import './HeroSticker.css';
+import './QrCode.css';
 import './Footer.css';
 import PrivacyPolicy from './PrivacyPolicy';
+import GetApp from './GetApp';
 import ContactModal from './ContactModal';
 import Header from './Header';
 import HeroVideo from './HeroVideo';
@@ -102,6 +104,11 @@ function HomePage() {
                 </svg>
               </div>
             </div>
+            <img
+              src="/qrcodeStores.png"
+              alt="QR code: scan to get HULM for your phone"
+              className="qr-code"
+            />
           </div>
           <HeroVideo />
         </div>
@@ -211,6 +218,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/get" element={<GetApp />} />
     </Routes>
   );
 }

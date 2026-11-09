@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 interface HeaderProps {
-  activePage: 'home' | 'privacy';
+  activePage: 'home' | 'privacy' | 'get';
   onContactClick: () => void;
 }
 

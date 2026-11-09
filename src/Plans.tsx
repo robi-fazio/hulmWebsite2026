@@ -38,6 +38,11 @@ function Plans() {
                 <img src="/btn_AppStore.png" alt="Download on the App Store" />
               </a>
             </div>
+            <img
+              src="/qrcodeStores.png"
+              alt="QR code: scan to get HULM for your phone"
+              className="qr-code"
+            />
           </div>
 
           <div className="plan-card">
