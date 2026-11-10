@@ -31,7 +31,7 @@
   grid-column: 1;
   grid-row: 2;
   justify-self: start;
-  margin-top: 2rem;
+  margin-top: calc(2rem + var(--badge-h) * 2 * 0.8);
   width: calc(var(--badge-h) * 2);
   height: calc(var(--badge-h) * 2);
   box-sizing: border-box;
@@ -39,7 +39,7 @@
   border-radius: 50%;
   background: linear-gradient(135deg, #BC7DB6 0%, #974590 65%);
   box-shadow: 0 6px 14px rgba(66, 60, 52, 0.2);
-  transform: rotate(10deg);
+  transform: rotate(7deg);
 }
 
 .hero-sticker svg {
