@@ -7,6 +7,7 @@
 .hero-store-row {
   --badge-h: 58px;
   --badge-gap: 1rem;
+  --sticker-size: calc(var(--badge-h) * 3);
   display: grid;
   grid-template-columns: max-content max-content;
   column-gap: var(--badge-gap);
@@ -31,9 +32,9 @@
   grid-column: 1;
   grid-row: 2;
   justify-self: start;
-  margin-top: calc(2rem + var(--badge-h) * 2 * 0.8);
-  width: calc(var(--badge-h) * 2);
-  height: calc(var(--badge-h) * 2);
+  margin-top: calc(2rem + var(--badge-h) * 1.6);
+  width: var(--sticker-size);
+  height: var(--sticker-size);
   box-sizing: border-box;
   border: 4px solid #B7D8AC;
   border-radius: 50%;
