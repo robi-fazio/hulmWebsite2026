@@ -79,9 +79,14 @@ function HomePage() {
                   <img src="/btn_AppStore.png" alt="Download on the App Store" />
                 </a>
               </div>
+              <img
+                src="/qrcodeStores.png"
+                alt="QR code: scan to get HULM for your phone"
+                className="qr-code"
+              />
               <div className="hero-sticker" aria-hidden="true">
                 <svg viewBox="0 0 100 100" focusable="false">
-                  <text x="50" y="35" textAnchor="middle" fontSize="30">8</text>
+                  <text x="50" y="35" textAnchor="middle" fontSize="30">14</text>
                   <text
                     x="50"
                     y="55"
@@ -97,19 +102,14 @@ function HomePage() {
                     y="74"
                     textAnchor="middle"
                     fontSize="10.5"
-                    textLength="62"
+                    textLength="58"
                     lengthAdjust="spacingAndGlyphs"
                   >
-                    and counting!
+                    and counting
                   </text>
                 </svg>
               </div>
             </div>
-            <img
-              src="/qrcodeStores.png"
-              alt="QR code: scan to get HULM for your phone"
-              className="qr-code"
-            />
           </div>
           <HeroVideo />
         </div>
