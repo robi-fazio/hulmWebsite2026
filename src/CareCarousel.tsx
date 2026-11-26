@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './CareCarousel.css';
+import { useLanguage } from './i18n/useLanguage';
 
 const SLIDE_COUNT = 3;
 
@@ -19,6 +20,8 @@ function Chevron({ direction }: { direction: 'left' | 'right' }) {
 }
 
 function CareCarousel() {
+  const { t } = useLanguage();
+  const { slide1, slide2, slide3, aria } = t.care;
   const [index, setIndex] = useState(0);
   const [height, setHeight] = useState<number | undefined>(undefined);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -59,7 +62,7 @@ function CareCarousel() {
               <button
                 type="button"
                 className="care-arrow care-arrow--prev"
-                aria-label="Previous slide"
+                aria-label={aria.previous}
                 onClick={() => goTo(index - 1)}
               >
                 <Chevron direction="left" />
@@ -69,7 +72,7 @@ function CareCarousel() {
               <button
                 type="button"
                 className="care-arrow care-arrow--next"
-                aria-label="Next slide"
+                aria-label={aria.next}
                 onClick={() => goTo(index + 1)}
               >
                 <Chevron direction="right" />
@@ -97,42 +100,23 @@ function CareCarousel() {
                     slideRefs.current[0] = el;
                   }}
                 >
-                  <h2>For children who find daily life harder</h2>
+                  <h2>{slide1.title}</h2>
                   <div className="care-grid">
                     <div className="care-col">
-                      <p>
-                        Some children find it hard to start a task, stay with it, or switch to the next
-                        thing. Time can feel invisible, and the usual flow of the day can feel
-                        unpredictable. Many parents describe the same pattern: repeated reminders, rising
-                        tension, and a lot of "five more minutes."
-                      </p>
-                      <p>
-                        HULM was made for those moments. A visual timer shows how much time is left. A
-                        task list breaks a routine into small steps. A friendly reward gives every small
-                        success a visible moment of celebration, and a collection of monsters to be proud
-                        of.
-                      </p>
+                      <p>{slide1.p1}</p>
+                      <p>{slide1.p2}</p>
                     </div>
                     <div className="care-col">
-                      <p>
-                        Every child is different. HULM is a tool that families can try, not a promise of
-                        results.
-                      </p>
-                      <p className="care-note">
-                        HULM is an everyday family tool. It is not a medical, therapeutic, or diagnostic
-                        product and does not replace professional advice.
-                      </p>
-                      <p className="care-research-note">
-                        Curious what studies have found about visual timers, visual schedules and
-                        rewards?
-                      </p>
+                      <p>{slide1.p3}</p>
+                      <p className="care-note">{slide1.note}</p>
+                      <p className="care-research-note">{slide1.researchNote}</p>
                       <button
                         type="button"
                         className="btn btn-primary care-more-btn"
                         tabIndex={index === 0 ? 0 : -1}
                         onClick={() => goTo(1)}
                       >
-                        SEE WHAT RESEARCH HAS LOOKED AT
+                        {slide1.moreButton}
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                           <path
                             d="M9 5l7 7-7 7"
@@ -146,7 +130,7 @@ function CareCarousel() {
                       </button>
                     </div>
                     <div className="care-col care-col--image">
-                      <img src="/splash4.png" alt="Hurry Up Little Monster illustration" />
+                      <img src="/splash4.png" alt={t.common.splashAlt} />
                     </div>
                   </div>
                 </div>
@@ -158,22 +142,15 @@ function CareCarousel() {
                     slideRefs.current[1] = el;
                   }}
                 >
-                  <h2>What research has looked at</h2>
-                  <p className="research-intro">
-                    These tools are used in many classrooms and homes, and researchers have studied
-                    them. Here is a summary of what the studies found. They do not prove HULM will
-                    work for every child.
-                  </p>
+                  <h2>{slide2.title}</h2>
+                  <p className="research-intro">{slide2.intro}</p>
                   <ul className="research-list">
                     <li>
                       <p>
-                        <strong>Visual timers.</strong> A recent study of 44 children aged 7 to 9 found
-                        that children who could see a visual timer reported less anxiety before a task
-                        than children who could not. It’s a small study on one kind of task, so treat
-                        it as an early sign, not a rule.
+                        <strong>{slide2.timersLabel}</strong> {slide2.timersText}
                       </p>
                       <p className="research-source">
-                        Source:{' '}
+                        {slide2.sourceLabel}{' '}
                         <a
                           href="https://doi.org/10.3390/ejihpe15120243"
                           target="_blank"
@@ -187,16 +164,10 @@ function CareCarousel() {
                     </li>
                     <li>
                       <p>
-                        <strong>Visual schedules and task steps.</strong> Researchers have studied
-                        picture-based schedules that show a routine step by step. Reviews of visual
-                        activity schedules report that they have been used to support children through
-                        transitions and to reduce problem behavior, mostly with children with autism or
-                        ADHD. The results are often best when a schedule is combined with other
-                        support, such as encouragement and rewards. A 2025 review also found the
-                        evidence for the visual schedule component by itself is not yet conclusive.
+                        <strong>{slide2.schedulesLabel}</strong> {slide2.schedulesText}
                       </p>
                       <p className="research-source">
-                        Sources:{' '}
+                        {slide2.sourcesLabel}{' '}
                         <a
                           href="https://link.springer.com/article/10.1007/s10803-014-2201-z"
                           target="_blank"
@@ -238,18 +209,14 @@ function CareCarousel() {
                     slideRefs.current[2] = el;
                   }}
                 >
-                  <h2>What research has looked at (continued)</h2>
+                  <h2>{slide3.title}</h2>
                   <ul className="research-list">
                     <li>
                       <p>
-                        <strong>Rewards.</strong> Token systems, where children earn tokens or points
-                        for positive behavior, are among the most studied classroom strategies. A
-                        meta-analysis of 24 studies in kindergarten to fifth-grade classrooms reported
-                        a large overall effect. The authors also noted methodological limits, so the
-                        results should be read with care.
+                        <strong>{slide3.rewardsLabel}</strong> {slide3.rewardsText}
                       </p>
                       <p className="research-source">
-                        Source:{' '}
+                        {slide2.sourceLabel}{' '}
                         <a
                           href="https://doi.org/10.1177/01454455211058077"
                           target="_blank"
@@ -261,24 +228,19 @@ function CareCarousel() {
                       </p>
                     </li>
                   </ul>
-                  <p className="research-summary">
-                    In plain words: the research suggests that making time visible, breaking routines
-                    into steps, and celebrating small wins can be helpful for many children. Results
-                    differ from child to child. If you have concerns about your child’s development or
-                    attention, a doctor or specialist is the right person to ask.
-                  </p>
+                  <p className="research-summary">{slide3.summary}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="care-dots" role="group" aria-label="Choose a slide">
+          <div className="care-dots" role="group" aria-label={aria.choose}>
             {Array.from({ length: SLIDE_COUNT }, (_, n) => (
               <button
                 type="button"
                 key={n}
                 className={`care-dot${index === n ? ' care-dot--active' : ''}`}
-                aria-label={`Go to slide ${n + 1} of ${SLIDE_COUNT}`}
+                aria-label={aria.goTo.replace('{n}', String(n + 1)).replace('{total}', String(SLIDE_COUNT))}
                 aria-current={index === n ? 'true' : undefined}
                 onClick={() => goTo(n)}
               />

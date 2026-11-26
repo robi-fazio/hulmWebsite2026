@@ -4,8 +4,11 @@ import './App.css';
 import './PrivacyPolicy.css';
 import ContactModal from './ContactModal';
 import Header from './Header';
+import { useLanguage } from './i18n/useLanguage';
 
 function PrivacyPolicy() {
+  const { t } = useLanguage();
+  const p = t.privacy;
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
@@ -14,126 +17,65 @@ function PrivacyPolicy() {
 
       <main className="privacy-content">
         <div className="privacy-inner">
-          <h1>Privacy Policy</h1>
-          <p className="privacy-subtitle">Privacy Policy for HULM – A Timer for Kids</p>
-          <p className="privacy-updated">Last updated: November 8, 2026</p>
+          <h1>{p.title}</h1>
+          <p className="privacy-subtitle">{p.subtitle}</p>
+          <p className="privacy-updated">{p.updated}</p>
 
-          <p>
-            This policy explains how HULM – A Timer for Kids (“HULM”, “we”, “us”) handles
-            information when you use our mobile app. HULM is published by Robi Fazio, based in
-            France, and is intended to be used by children together with a parent or guardian.
-          </p>
+          <p>{p.intro}</p>
 
-          <h2>1. Summary</h2>
+          <h2>{p.summary.title}</h2>
           <ul>
-            <li>There is no account, sign-up, or sign-in.</li>
-            <li>We do not ask for names, email addresses, photos, or contact details.</li>
-            <li>
-              Your timers, task lists, monsters, game progress, and child profiles are stored on
-              your device.
-            </li>
-            <li>The free version shows ads. Premium removes them.</li>
-            <li>We do not sell personal information.</li>
+            {p.summary.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
 
-          <h2>2. Information stored on your device</h2>
-          <p>
-            HULM stores the following locally on your device: monsters collected, timers and task
-            lists (including the custom ones you save with Premium), memory game progress, child
-            profiles, and the parental code (PIN) you choose, which is stored only as a hashed
-            value. We do not have access to this data. We recommend using a nickname or first
-            name for profiles, never a full name. Deleting the app removes this data.
-          </p>
+          <h2>{p.local.title}</h2>
+          <p>{p.local.text}</p>
 
-          <h2>3. Information collected automatically</h2>
-          <p>
-            When you use the app, certain technical information may be collected by our service
-            providers:
-          </p>
+          <h2>{p.auto.title}</h2>
+          <p>{p.auto.intro}</p>
           <ul>
-            <li>
-              Device information (such as device model, operating system version, and device
-              identifiers)
-            </li>
-            <li>Log information (such as app crashes and performance)</li>
-            <li>Usage data (such as the features used and interaction with ads)</li>
+            {p.auto.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
-          <p>
-            This information is used by these providers to deliver and measure ads and to keep
-            the services running. We do not link it to a name, an account, or any contact
-            details, because HULM does not collect them.
-          </p>
+          <p>{p.auto.outro}</p>
 
-          <h2>4. Advertising</h2>
-          <p>
-            The free version of HULM includes advertising from Google AdMob. To deliver and
-            measure ads, Google and its ad partners may collect technical data such as your
-            device’s advertising identifier and how you interact with ads. Depending on your
-            device settings and the country you are in, ads may be personalized.
-          </p>
-          <p>
-            On iPhone and iPad, the app asks for your permission before tracking, and you can
-            change your choice at any time in your device settings. On Android, you can reset
-            your advertising ID or opt out of ad personalization in your device’s Google
-            settings. Premium removes all ads.
-          </p>
+          <h2>{p.ads.title}</h2>
+          <p>{p.ads.p1}</p>
+          <p>{p.ads.p2}</p>
 
-          <h2>5. Purchases</h2>
-          <p>
-            Premium purchases are processed by Apple (App Store) or Google (Google Play). We do
-            not receive or store your payment details.
-          </p>
+          <h2>{p.purchases.title}</h2>
+          <p>{p.purchases.text}</p>
 
-          <h2>6. How we use information</h2>
-          <p>We use information only to:</p>
+          <h2>{p.use.title}</h2>
+          <p>{p.use.intro}</p>
           <ul>
-            <li>provide and maintain the app</li>
-            <li>improve and fix the app</li>
-            <li>show ads in the free version</li>
-            <li>process purchases through the app stores</li>
+            {p.use.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
 
-          <h2>7. Sharing</h2>
+          <h2>{p.sharing.title}</h2>
+          <p>{p.sharing.text}</p>
+
+          <h2>{p.children.title}</h2>
+          <p>{p.children.text}</p>
+
+          <h2>{p.rights.title}</h2>
           <p>
-            We do not sell personal information. We share technical information only with the
-            service providers that help us run the app (Google AdMob, Apple, and Google Play),
-            and only as needed to provide their service.
+            {p.rights.before} <a href="mailto:info@robifazio.com">info@robifazio.com</a>.{' '}
+            {p.rights.after}
           </p>
 
-          <h2>8. Children’s privacy</h2>
-          <p>
-            HULM is made for children to use with a parent or guardian. We do not knowingly
-            collect personal information from children under 13 (or under 15 in France). The app
-            needs no sign-up. If you think a child has given us personal information, contact us
-            and we will delete it.
-          </p>
+          <h2>{p.security.title}</h2>
+          <p>{p.security.text}</p>
 
-          <h2>9. Your rights under the GDPR</h2>
-          <p>
-            We are based in France and follow the GDPR. The data controller is Robi Fazio,{' '}
-            <a href="mailto:info@robifazio.com">info@robifazio.com</a>. You have the right to
-            access, correct, delete, restrict, or object to the processing of your data, and the
-            right to data portability. Because HULM does not hold data that identifies you, we may
-            need further information to find any data about you. You can also file a complaint
-            with the French data protection authority, the CNIL. Where we rely on a legal basis,
-            it is our legitimate interest in running and improving the app, or your consent where
-            the law requires it.
-          </p>
+          <h2>{p.changes.title}</h2>
+          <p>{p.changes.text}</p>
 
-          <h2>10. Security and retention</h2>
-          <p>
-            We take reasonable technical and organizational steps to protect information. Data on
-            your device stays until you delete the app. Data held by third parties follows their
-            own policies, such as Google’s Privacy Policy.
-          </p>
-
-          <h2>11. Changes</h2>
-          <p>
-            We may update this policy. We will post the new version on this page and change the
-            “Last updated” date. For significant changes, we will also inform you in the app.
-          </p>
-
-          <h2>12. Contact</h2>
+          <h2>{p.contact.title}</h2>
           <p>
             Robi Fazio – <a href="mailto:info@robifazio.com">info@robifazio.com</a>
           </p>
@@ -142,15 +84,15 @@ function PrivacyPolicy() {
 
       <footer id="contact" className="footer">
         <div className="footer-inner">
-          <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
+          <img src="/HulmLogo.svg" alt={t.common.logoAlt} className="logo" />
           <nav className="footer-nav">
-            <Link to="/">HOME</Link>
-            <Link to="/privacy-policy">PRIVACY POLICY</Link>
+            <Link to="/">{t.common.home}</Link>
+            <Link to="/privacy-policy">{t.common.privacyPolicy}</Link>
           </nav>
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
+            {t.common.contactMe}
           </button>
-          <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
+          <p className="footer-copy">{t.common.copyright}</p>
         </div>
       </footer>
 

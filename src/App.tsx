@@ -16,41 +16,28 @@ import CareCarousel from './CareCarousel';
 import Faq from './Faq';
 import Plans from './Plans';
 import KofiWidget from './KofiWidget';
+import { useLanguage } from './i18n/useLanguage';
 
 const illustrators = [
   {
     photo: '/RobiHulmRound.png',
     name: 'Robi Fazio',
-    bio: 'Old-style graphic designer with a passion for app development. He is the designer and creator of this app.',
     signature: '/sign_Robi.png',
     zoom: false,
   },
   {
     photo: '/illuMonica.png',
     name: 'Monica Milani',
-    bio: "A lover of creative endeavors, Monica draws some of the monsters you'll find in this app.",
     signature: '/sign_Monica.png',
     zoom: true,
   },
 ];
 
-const howSteps = [
-  {
-    title: 'Pick a timer or a task list',
-    text: 'Use a ready-made timer (brushing teeth, tidying up, getting dressed, nap time) or create your own.',
-  },
-  {
-    title: 'Watch time disappear',
-    text: 'A green curtain slowly slides away to reveal a friendly monster, so time becomes something your child can see.',
-  },
-  {
-    title: 'Collect your reward',
-    text: 'Every completed timer or task list unlocks a monster. Collect enough and a memory game unlocks, played with the monsters your child has earned.',
-    monster: '/monster12.png',
-  },
-];
+// The monster picture sits on the third step.
+const HOW_MONSTER_STEP = 2;
 
 function HomePage() {
+  const { t } = useLanguage();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
@@ -61,29 +48,23 @@ function HomePage() {
         <div className="hero-inner hero-row">
           <div className="hero-text">
             <h1>
-              <span className="accent-red">HULM</span> - Turn daily battles{' '}
+              <span className="accent-red">HULM</span> - {t.hero.titleLine1}{' '}
               <br />
-              into fun quests
+              {t.hero.titleLine2}
             </h1>
             <p className="hero-description">
-              <strong>A visual timer and task list app</strong> where every finished action earns a
-              cute monster. Built for families who want smoother mornings, calmer transitions, and
-              routines that feel like a game, not a fight.
+              <strong>{t.hero.descriptionBold}</strong> {t.hero.descriptionRest}
             </p>
             <div className="hero-store-row">
               <div className="store-badges">
                 <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
-                  <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+                  <img src="/btn_GooglePlay.png" alt={t.common.googlePlayAlt} />
                 </a>
                 <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
-                  <img src="/btn_AppStore.png" alt="Download on the App Store" />
+                  <img src="/btn_AppStore.png" alt={t.common.appStoreAlt} />
                 </a>
               </div>
-              <img
-                src="/qrcodeStores.png"
-                alt="QR code: scan to get HULM for your phone"
-                className="qr-code"
-              />
+              <img src="/qrcodeStores.png" alt={t.common.qrAlt} className="qr-code" />
               <div className="hero-sticker" aria-hidden="true">
                 <svg viewBox="0 0 100 100" focusable="false">
                   <text x="50" y="35" textAnchor="middle" fontSize="30">14</text>
@@ -95,7 +76,7 @@ function HomePage() {
                     textLength="80"
                     lengthAdjust="spacingAndGlyphs"
                   >
-                    languages
+                    {t.hero.stickerLine1}
                   </text>
                   <text
                     x="50"
@@ -105,7 +86,7 @@ function HomePage() {
                     textLength="58"
                     lengthAdjust="spacingAndGlyphs"
                   >
-                    and counting
+                    {t.hero.stickerLine2}
                   </text>
                 </svg>
               </div>
@@ -117,13 +98,13 @@ function HomePage() {
 
       <section id="how-it-works" className="how-section">
         <div className="how-inner">
-          <h2>How it works</h2>
-          <p className="section-intro">Three simple steps turn any routine into a small adventure.</p>
+          <h2>{t.how.title}</h2>
+          <p className="section-intro">{t.how.intro}</p>
           <ol className="how-steps">
-            {howSteps.map((step, index) => (
+            {t.how.steps.map((step, index) => (
               <li className="how-step" key={step.title}>
-                {step.monster && (
-                  <img src={step.monster} alt="" aria-hidden="true" className="how-monster" />
+                {index === HOW_MONSTER_STEP && (
+                  <img src="/monster12.png" alt="" aria-hidden="true" className="how-monster" />
                 )}
                 <div className="how-number" aria-hidden="true">{index + 1}</div>
                 <h3>{step.title}</h3>
@@ -142,13 +123,10 @@ function HomePage() {
 
       <section className="illustrators-section">
         <div className="illustrators-inner">
-          <h2>Our Illustrators</h2>
-          <p className="illustrators-intro">
-            We're starting with a package of stock illustrations. But we're slowly filling up the app with
-            monsters designed by our own illustrators. Do you want to contribute as well? Get in touch with us!
-          </p>
+          <h2>{t.illustrators.title}</h2>
+          <p className="illustrators-intro">{t.illustrators.intro}</p>
           <div className="illustrators-grid">
-            {illustrators.map((person) => (
+            {illustrators.map((person, index) => (
               <div className="illustrator-card" key={person.name}>
                 <div className="illustrator-photo-wrap">
                   <img
@@ -158,8 +136,12 @@ function HomePage() {
                   />
                 </div>
                 <h3>{person.name}</h3>
-                <p>{person.bio}</p>
-                <img src={person.signature} alt={`${person.name} signature`} className="signature" />
+                <p>{t.illustrators.bios[index]}</p>
+                <img
+                  src={person.signature}
+                  alt={t.illustrators.signatureAlt.replace('{name}', person.name)}
+                  className="signature"
+                />
               </div>
             ))}
 
@@ -167,17 +149,14 @@ function HomePage() {
               <div className="illustrator-photo-wrap">
                 <img
                   src="/artist0.png"
-                  alt="Become an illustrator"
+                  alt={t.illustrators.becomeAlt}
                   className="illustrator-photo illustrator-photo--zoom"
                 />
               </div>
-              <h3>You?</h3>
-              <p>
-                Would you like to send us your monsters too? We'll be happy to get your drawings.
-                Just get in touch with us!
-              </p>
+              <h3>{t.illustrators.youTitle}</h3>
+              <p>{t.illustrators.youText}</p>
               <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-                CONTACT
+                {t.common.contact}
               </button>
             </div>
           </div>
@@ -186,26 +165,26 @@ function HomePage() {
 
       <footer id="contact" className="footer">
         <div className="footer-inner">
-          <img src="/HulmLogo.svg" alt="HULM logo" className="logo" />
+          <img src="/HulmLogo.svg" alt={t.common.logoAlt} className="logo" />
           <nav className="footer-nav">
-            <Link to="/">HOME</Link>
-            <Link to="/privacy-policy">PRIVACY POLICY</Link>
+            <Link to="/">{t.common.home}</Link>
+            <Link to="/privacy-policy">{t.common.privacyPolicy}</Link>
           </nav>
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
+            {t.common.contactMe}
           </button>
           <div className="footer-store-row">
             <div className="store-badges">
               <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
-                <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+                <img src="/btn_GooglePlay.png" alt={t.common.googlePlayAlt} />
               </a>
               <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
-                <img src="/btn_AppStore.png" alt="Download on the App Store" />
+                <img src="/btn_AppStore.png" alt={t.common.appStoreAlt} />
               </a>
             </div>
             <KofiWidget />
           </div>
-          <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
+          <p className="footer-copy">{t.common.copyright}</p>
         </div>
       </footer>
 
