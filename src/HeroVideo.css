@@ -152,10 +152,13 @@
    description and the store buttons instead of behind the hero. */
 @media (max-width: 600px) {
   .hero {
-    --hero-video-zoom: 1.2; /* 1 = no zoom, 1.2 = 20% closer */
+    /* The 20% zoom now comes from the taller box: the square video is scaled
+       by object-fit: cover to fill the box height (1.2x), so the full height
+       stays visible and only the sides are cropped. Keep this at 1. */
+    --hero-video-zoom: 1;
     --hero-video-shift-x: 0%;
-    --hero-video-pos-x: 71%; /* horizontal focus point: raise/lower to move the phone */
-    --hero-mobile-ratio: 1 / 1; /* shape of the video box */
+    --hero-video-pos-x: 50%; /* horizontal focus point: raise/lower to move the phone */
+    --hero-mobile-ratio: 1 / 1.2; /* box shape: width / height. Taller = more zoom */
   }
 
   .hero .hero-row {

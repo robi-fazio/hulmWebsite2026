@@ -15,3 +15,10 @@
     margin-right: auto;
   }
 }
+
+/* Phones: no QR code (it is for scanning from another device). */
+@media (max-width: 600px) {
+  .qr-code {
+    display: none;
+  }
+}
