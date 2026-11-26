@@ -33,6 +33,13 @@ export default function HeroVideo() {
           preload="auto"
           onError={() => setFailed(true)}
         >
+          {/* The browser uses the first <source> whose media query matches. */}
+          <source
+            src="/videos/HULM_MobileVideo.mp4"
+            type="video/mp4"
+            media="(max-width: 600px) and (orientation: portrait)"
+            onError={() => setFailed(true)}
+          />
           <source src="/videos/hulm-hero4k.mp4" type="video/mp4" onError={() => setFailed(true)} />
         </video>
       )}
