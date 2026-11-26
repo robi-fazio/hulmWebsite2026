@@ -4,8 +4,10 @@ import './GetApp.css';
 import './NotFound.css';
 import ContactModal from './ContactModal';
 import Header from './Header';
+import { useLanguage } from './i18n/useLanguage';
 
 function NotFound() {
+  const { t } = useLanguage();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
@@ -14,22 +16,22 @@ function NotFound() {
 
       <main className="get-content">
         <p className="notfound-code">404</p>
-        <h1>Page not found</h1>
-        <p>Sorry, we couldn&rsquo;t find the page you were looking for.</p>
+        <h1>{t.notFound.title}</h1>
+        <p>{t.notFound.text}</p>
         <Link to="/" className="btn btn-primary">
-          BACK TO HOME
+          {t.notFound.back}
         </Link>
       </main>
 
       <footer className="footer">
         <div className="get-footer-inner">
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
+            {t.common.contactMe}
           </button>
           <a className="get-footer-url" href="https://hulm.robifazio.com">
             https://hulm.robifazio.com
           </a>
-          <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
+          <p className="footer-copy">{t.common.copyright}</p>
         </div>
       </footer>
 

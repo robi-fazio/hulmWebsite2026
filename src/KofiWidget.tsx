@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useLanguage } from './i18n/useLanguage';
 
 const KOFI_SCRIPT_SRC = 'https://storage.ko-fi.com/cdn/widget/Widget_2.js';
 
@@ -11,6 +12,8 @@ type KofiWindow = Window & {
 
 function KofiWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+  const label = t.kofi.text;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -19,7 +22,7 @@ function KofiWidget() {
     const render = () => {
       const widget = (window as KofiWindow).kofiwidget2;
       if (!widget) return;
-      widget.init('Support me', '#794bc4', 'robifazio');
+      widget.init(label, '#794bc4', 'robifazio');
       container.innerHTML = widget.getHTML();
     };
 
@@ -40,7 +43,7 @@ function KofiWidget() {
     const loadedScript = script;
     loadedScript.addEventListener('load', render);
     return () => loadedScript.removeEventListener('load', render);
-  }, []);
+  }, [label]);
 
   return <div className="kofi-inline" ref={containerRef} />;
 }

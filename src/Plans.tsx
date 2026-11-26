@@ -1,70 +1,49 @@
 import './Plans.css';
-
-const sharedFeatures = [
-  'Ready-made timers (brushing teeth, tidying up, chores, nap time)',
-  'Custom timer from 1 to 999 minutes',
-  'Monster collection to build up',
-  'Memory game, played with the monsters your child has earned',
-];
-
-const premiumFeatures = sharedFeatures.map((feature, index) =>
-  index === 0 ? 'Ready-made timers' : feature,
-);
-
-const premiumExtras = [
-  'No ads, ever',
-  'Save your own custom timers',
-  'Task lists that earn monsters',
-  'A separate profile and progress for each child',
-];
+import { useLanguage } from './i18n/useLanguage';
 
 function Plans() {
+  const { t } = useLanguage();
+  const { plans } = t;
+  const premiumFeatures = [plans.premiumFirstFeature, ...plans.sharedFeatures.slice(1)];
+
   return (
     <section id="plans" className="plans-section">
       <div className="plans-inner">
-        <h2>Free and Premium</h2>
+        <h2>{plans.title}</h2>
         <div className="plans-grid">
           <div className="plans-intro">
-            <p>
-              Start for free with everything your child needs to begin collecting monsters. Upgrade
-              to Premium when you want an ad-free app, saved timers, task lists and a profile for
-              each child.
-            </p>
+            <p>{plans.intro}</p>
             <div className="store-badges">
               <a href="https://play.google.com/store/apps/details?id=com.robifazio.hulm" target="_blank" rel="noreferrer">
-                <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+                <img src="/btn_GooglePlay.png" alt={t.common.googlePlayAlt} />
               </a>
               <a href="https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270" target="_blank" rel="noreferrer">
-                <img src="/btn_AppStore.png" alt="Download on the App Store" />
+                <img src="/btn_AppStore.png" alt={t.common.appStoreAlt} />
               </a>
             </div>
-            <img
-              src="/qrcodeStores.png"
-              alt="QR code: scan to get HULM for your phone"
-              className="qr-code"
-            />
+            <img src="/qrcodeStores.png" alt={t.common.qrAlt} className="qr-code" />
           </div>
 
           <div className="plan-card">
-            <h3 className="plan-name">Free</h3>
-            <p className="plan-tagline">Everything you need to get started.</p>
+            <h3 className="plan-name">{plans.freeName}</h3>
+            <p className="plan-tagline">{plans.freeTagline}</p>
             <ul className="plan-list">
-              {sharedFeatures.map((feature) => (
+              {plans.sharedFeatures.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
-              <li className="plan-item--muted">Shows ads</li>
+              <li className="plan-item--muted">{plans.freeAds}</li>
             </ul>
           </div>
 
           <div className="plan-card plan-card--premium">
-            <h3 className="plan-name">Premium</h3>
-            <p className="plan-tagline">Everything in Free, and more.</p>
+            <h3 className="plan-name">{plans.premiumName}</h3>
+            <p className="plan-tagline">{plans.premiumTagline}</p>
             <ul className="plan-list">
               {premiumFeatures.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
-              <li className="plan-subhead">Plus, only in Premium</li>
-              {premiumExtras.map((feature) => (
+              <li className="plan-subhead">{plans.premiumSubhead}</li>
+              {plans.premiumExtras.map((feature) => (
                 <li className="plan-item--extra" key={feature}>
                   {feature}
                 </li>

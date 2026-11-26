@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import './ContactModal.css';
+import { useLanguage } from './i18n/useLanguage';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface ContactModalProps {
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const { t } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -50,48 +52,46 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
   return (
     <div className="modal-overlay" onClick={resetAndClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={resetAndClose} aria-label="Close">
+        <button className="modal-close" onClick={resetAndClose} aria-label={t.contact.closeLabel}>
           &times;
         </button>
-        <h2 className="modal-title">Contact Us</h2>
+        <h2 className="modal-title">{t.contact.title}</h2>
 
         {status === 'success' ? (
-          <p className="form-status form-status--success">
-            Thanks! Your message has been sent. We'll get back to you soon.
-          </p>
+          <p className="form-status form-status--success">{t.contact.success}</p>
         ) : (
           <form className="contact-form" onSubmit={handleSubmit}>
             <label className="form-field">
-              <span>Name</span>
+              <span>{t.contact.nameLabel}</span>
               <input
                 type="text"
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
+                placeholder={t.contact.namePlaceholder}
                 required
                 disabled={status === 'sending'}
               />
             </label>
             <label className="form-field">
-              <span>Your email</span>
+              <span>{t.contact.emailLabel}</span>
               <input
                 type="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
+                placeholder={t.contact.emailPlaceholder}
                 required
                 disabled={status === 'sending'}
               />
             </label>
             <label className="form-field">
-              <span>Message</span>
+              <span>{t.contact.messageLabel}</span>
               <textarea
                 name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="How can we help?"
+                placeholder={t.contact.messagePlaceholder}
                 rows={5}
                 required
                 disabled={status === 'sending'}
@@ -99,17 +99,15 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </label>
 
             {status === 'error' && (
-              <p className="form-status form-status--error">
-                Something went wrong. Please try again or email us directly.
-              </p>
+              <p className="form-status form-status--error">{t.contact.error}</p>
             )}
 
             <div className="form-actions">
               <button type="button" className="btn-cancel" onClick={resetAndClose} disabled={status === 'sending'}>
-                Cancel
+                {t.contact.cancel}
               </button>
               <button type="submit" className="btn-send" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending\u2026' : 'Send'}
+                {status === 'sending' ? t.contact.sending : t.contact.send}
               </button>
             </div>
           </form>

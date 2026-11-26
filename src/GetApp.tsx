@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import './GetApp.css';
 import ContactModal from './ContactModal';
 import Header from './Header';
+import { useLanguage } from './i18n/useLanguage';
 
 const ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.robifazio.hulm';
 const IOS_URL = 'https://apps.apple.com/us/app/hulm-a-rewarding-timer/id6743365270';
 
 function GetApp() {
+  const { t } = useLanguage();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
@@ -24,14 +26,14 @@ function GetApp() {
       <Header activePage="get" onContactClick={() => setIsContactOpen(true)} />
 
       <main className="get-content">
-        <h1>Get HULM</h1>
-        <p>Choose your store:</p>
+        <h1>{t.getApp.title}</h1>
+        <p>{t.getApp.choose}</p>
         <div className="store-badges get-badges">
           <a href={ANDROID_URL} target="_blank" rel="noreferrer">
-            <img src="/btn_GooglePlay.png" alt="Get it on Google Play" />
+            <img src="/btn_GooglePlay.png" alt={t.common.googlePlayAlt} />
           </a>
           <a href={IOS_URL} target="_blank" rel="noreferrer">
-            <img src="/btn_AppStore.png" alt="Download on the App Store" />
+            <img src="/btn_AppStore.png" alt={t.common.appStoreAlt} />
           </a>
         </div>
       </main>
@@ -39,12 +41,12 @@ function GetApp() {
       <footer className="footer">
         <div className="get-footer-inner">
           <button className="btn btn-primary" onClick={() => setIsContactOpen(true)}>
-            CONTACT ME
+            {t.common.contactMe}
           </button>
           <a className="get-footer-url" href="https://hulm.robifazio.com">
             https://hulm.robifazio.com
           </a>
-          <p className="footer-copy">&copy; 2026 hulm.robifazio.com. All rights reserved</p>
+          <p className="footer-copy">{t.common.copyright}</p>
         </div>
       </footer>
 
