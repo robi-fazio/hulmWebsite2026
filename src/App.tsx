@@ -61,7 +61,7 @@ function HomePage() {
         <div className="hero-inner hero-row">
           <div className="hero-text">
             <h1>
-              <span className="accent-red">HULM</span> - Turn daily battles
+              <span className="accent-red">HULM</span> - Turn daily battles{' '}
               <br />
               into fun quests
             </h1>

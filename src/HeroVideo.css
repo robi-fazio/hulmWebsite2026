@@ -152,7 +152,7 @@
    description and the store buttons instead of behind the hero. */
 @media (max-width: 600px) {
   .hero {
-    --hero-video-zoom: 1;
+    --hero-video-zoom: 1.2; /* 1 = no zoom, 1.2 = 20% closer */
     --hero-video-shift-x: 0%;
     --hero-video-pos-x: 71%; /* horizontal focus point: raise/lower to move the phone */
     --hero-mobile-ratio: 1 / 1; /* shape of the video box */
@@ -180,7 +180,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: var(--hero-mobile-ratio);
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 1.8rem; /* bottom was 1.5rem, +20% */
     overflow: hidden;
     -webkit-mask-image:
       linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
