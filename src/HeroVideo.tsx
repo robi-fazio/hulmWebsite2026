@@ -6,17 +6,16 @@ export default function HeroVideo() {
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const video = videoRef.current;
+    const video = videoRef.current;
 
-      if (video) {
-        video.play().catch(() => {
-          // Browsers may block playback until the visitor interacts with the page.
-        });
-      }
-    }, 5000);
-
-    return () => clearTimeout(timer);
+    if (video) {
+      // React does not always reflect the muted prop as an attribute, and
+      // browsers only autoplay muted video, so set it explicitly and start now.
+      video.muted = true;
+      video.play().catch(() => {
+        // Browsers (or iOS Low Power Mode) may block playback until the visitor interacts.
+      });
+    }
   }, []);
 
   return (
@@ -27,6 +26,7 @@ export default function HeroVideo() {
         <video
           ref={videoRef}
           className="hero-video"
+          autoPlay
           muted
           loop
           playsInline
@@ -35,7 +35,7 @@ export default function HeroVideo() {
         >
           {/* The browser uses the first <source> whose media query matches. */}
           <source
-            src="/videos/HULM_MobileVideo.mp4"
+            src="/videos/HULM_MobileVideo3.mp4"
             type="video/mp4"
             media="(max-width: 600px) and (orientation: portrait)"
             onError={() => setFailed(true)}
