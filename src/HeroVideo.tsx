@@ -1,9 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import './HeroVideo.css';
 
+const MOBILE_QUERY = '(max-width: 600px) and (orientation: portrait)';
+
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia(MOBILE_QUERY).matches,
+  );
   const [failed, setFailed] = useState(false);
+
+  // Keep the chosen source in sync if the visitor rotates a tablet or resizes.
+  useEffect(() => {
+    const query = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(query.matches);
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -16,33 +29,38 @@ export default function HeroVideo() {
         // Browsers (or iOS Low Power Mode) may block playback until the visitor interacts.
       });
     }
-  }, []);
+  }, [isMobile]);
+
+  if (failed) {
+    return (
+      <div className="hero-media" aria-hidden="true">
+        <img className="hero-video" src="/HULM_screenshot.png" alt="" />
+      </div>
+    );
+  }
 
   return (
     <div className="hero-media" aria-hidden="true">
-      {failed ? (
-        <img className="hero-video" src="/HULM_screenshot.png" alt="" />
-      ) : (
-        <video
-          ref={videoRef}
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          onError={() => setFailed(true)}
-        >
-          {/* The browser uses the first <source> whose media query matches. */}
-          <source
-            src="/videos/HULM_MobileVideo3.mp4"
-            type="video/mp4"
-            media="(max-width: 600px) and (orientation: portrait)"
-            onError={() => setFailed(true)}
-          />
-          <source src="/videos/hulm-hero4k.mp4" type="video/mp4" onError={() => setFailed(true)} />
-        </video>
-      )}
+      <video
+        key={isMobile ? 'mobile' : 'desktop'}
+        ref={videoRef}
+        className="hero-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onError={(event) => {
+          console.error('Hero video failed to load:', event);
+          setFailed(true);
+        }}
+      >
+        {/* One source, chosen in JS: no multi-source selection, no per-source error handlers. */}
+        <source
+          src={isMobile ? '/videos/HULM_MobileVideo3.mp4' : '/videos/hulm-hero4k.mp4'}
+          type="video/mp4"
+        />
+      </video>
     </div>
   );
 }
