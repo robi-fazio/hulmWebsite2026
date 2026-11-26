@@ -147,3 +147,52 @@
     padding-bottom: calc(min(524px, 100vw - 3rem) + 2rem);
   }
 }
+
+/* Mobile portrait (600px and below): video sits inline between the
+   description and the store buttons instead of behind the hero. */
+@media (max-width: 600px) {
+  .hero {
+    --hero-video-zoom: 1;
+    --hero-video-shift-x: 0%;
+    --hero-video-pos-x: 71%; /* horizontal focus point: raise/lower to move the phone */
+    --hero-mobile-ratio: 1 / 1; /* shape of the video box */
+  }
+
+  .hero .hero-row {
+    padding-bottom: 0;
+  }
+
+  /* Let the text children become direct flex items of .hero-row so the
+     video can be ordered between them without changing the markup. */
+  .hero .hero-text {
+    display: contents;
+  }
+
+  .hero .hero-text > * {
+    width: 100%;
+  }
+
+  .hero .hero-media {
+    position: static;
+    inset: auto;
+    z-index: auto;
+    order: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--hero-mobile-ratio);
+    margin: 1.5rem 0;
+    overflow: hidden;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+      linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+      linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+    mask-composite: intersect;
+  }
+
+  .hero .hero-store-row {
+    order: 2;
+  }
+}
